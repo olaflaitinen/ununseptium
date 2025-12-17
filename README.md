@@ -10,7 +10,7 @@
 [![Publish](https://github.com/olaflaitinen/ununseptium/actions/workflows/publish.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/publish.yml)
 [![CodeQL](https://github.com/olaflaitinen/ununseptium/actions/workflows/codeql.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/codeql.yml)
 [![Scorecard](https://github.com/olaflaitinen/ununseptium/actions/workflows/scorecard.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/scorecard.yml)
-[![License](https://img.shields.io/github/license/olaflaitinen/ununseptium)](https://github.com/olaflaitinen/ununseptium/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/olaflaitinen/ununseptium/blob/main/LICENSE)
 [![PyPI version](https://img.shields.io/pypi/v/ununseptium)](https://pypi.org/project/ununseptium/)
 [![Python versions](https://img.shields.io/pypi/pyversions/ununseptium)](https://pypi.org/project/ununseptium/)
 [![Coverage](https://img.shields.io/codecov/c/github/olaflaitinen/ununseptium)](https://codecov.io/gh/olaflaitinen/ununseptium)

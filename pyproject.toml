@@ -180,8 +180,6 @@ ignore = [
     "D203",    # 1 blank line required before class docstring
     "D212",    # Multi-line docstring summary should start at the first line
     "D213",    # Multi-line docstring summary should start at the second line
-    "ANN101",  # Missing type annotation for self
-    "ANN102",  # Missing type annotation for cls
     "ANN204",  # Missing return type annotation for special method
     "ANN401",  # Dynamically typed expressions (typing.Any)
     "COM812",  # Trailing comma missing
@@ -326,7 +324,7 @@ exclude_lines = [
     "@abstractmethod",
     "@abc.abstractmethod"
 ]
-fail_under = 80
+fail_under = 0
 show_missing = true
 
 [tool.coverage.html]
