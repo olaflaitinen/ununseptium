@@ -45,8 +45,8 @@ graph TB
     MODELS -->|Boundary 3| CORE
     CONFIG -->|Protected| CORE
     KEYS -->|Protected| CORE
-```
 
+```text
 ### Boundary Definitions
 
 | Boundary | Source | Assumption |

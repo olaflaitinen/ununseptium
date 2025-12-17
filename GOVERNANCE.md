@@ -43,8 +43,8 @@ graph TB
     MAINT --> SEC
     MAINT --> AI
     MAINT --> MATH
-```
 
+```text
 ## Maintainers
 
 ### Current Maintainers

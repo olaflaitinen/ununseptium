@@ -64,8 +64,8 @@ graph TB
     POSTPROCESS --> AUDIT
     MODEL --> CARD
     MODEL --> MONITOR
-```
 
+```text
 ## Feature Engineering
 
 ### Feature Types
@@ -101,8 +101,8 @@ class TransactionFeatures(FeaturePipeline):
         recent = self.transaction_count_24h(account)
         historical = self.store.avg_daily_count(account)
         return recent / max(historical, 1)
-```
 
+```text
 ### Feature Store Integration
 
 | Operation | Method |
@@ -132,8 +132,8 @@ class Model(ABC):
     def predict_proba(self, X: np.ndarray) -> np.ndarray:
         """Generate probability estimates."""
         ...
-```
 
+```text
 ### Model Types
 
 | Type | Implementation | Use Case |
@@ -157,8 +157,8 @@ graph LR
 
     AGG --> CALIBRATE[Calibration]
     CALIBRATE --> OUTPUT[Final Score]
-```
 
+```text
 Ensemble combination:
 
 $$\hat{y} = \sum_{i=1}^{n} w_i \cdot f_i(x)$$
@@ -203,8 +203,8 @@ explainer = Explainer(model)
 explanation = explainer.explain(features)
 
 print(f"Top factors: {explanation.top_features(n=5)}")
-```
 
+```text
 ### Explanation Output
 
 | Field | Type | Description |
@@ -247,8 +247,8 @@ card = ModelCard(
         "Regular fairness audits required",
     ],
 )
-```
 
+```text
 ### Governance Workflow
 
 ```mermaid
@@ -261,8 +261,8 @@ graph TB
     DEPLOY --> MONITOR[Monitoring]
     MONITOR -->|Drift| RETRAIN[Retrain]
     RETRAIN --> VALIDATE
-```
 
+```text
 ## Scientific ML
 
 ### Physics-Informed Neural Networks
@@ -277,8 +277,8 @@ class RiskDynamics(PINN):
         """Enforce domain constraints."""
         # Risk must be non-negative
         return torch.relu(-y).mean()
-```
 
+```text
 ### Neural ODEs
 
 For continuous-time dynamics:
@@ -292,8 +292,8 @@ model = NeuralODE(
     hidden_dim=64,
     method="dopri5",
 )
-```
 
+```text
 ## Performance Optimization
 
 ### Batch Processing

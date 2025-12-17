@@ -35,8 +35,8 @@ graph TB
     PRED --> LOSS
     DATA_LOSS --> TOTAL[Total Loss]
     LOSS --> TOTAL
-```
 
+```text
 ### Total Loss
 
 $$\mathcal{L} = \mathcal{L}_{data} + \lambda \mathcal{L}_{physics}$$
@@ -62,8 +62,8 @@ class RiskDynamics(PINN):
 
 model = RiskDynamics(hidden_layers=[64, 64])
 model.fit(X_train, y_train, physics_weight=0.1)
-```
 
+```text
 ### Use Cases
 
 | Application | Physics Constraint |
@@ -98,8 +98,8 @@ model = NeuralODE(
 
 # Predict at any time point
 y_t = model.forward(y0, t)
-```
 
+```text
 ### Training
 
 ```python
@@ -108,8 +108,8 @@ model.fit(trajectories, times)
 
 # Predict trajectory
 trajectory = model.predict(y0, t_grid)
-```
 
+```text
 ### ODE Solvers
 
 | Solver | Accuracy | Speed |
@@ -132,8 +132,8 @@ risk_dynamics.fit(historical_risk, times)
 
 # Predict future risk
 future_risk = risk_dynamics.predict(current_risk, future_times)
-```
 
+```text
 ### Constrained Risk Model
 
 ```python
@@ -151,8 +151,8 @@ class ConstrainedRiskModel(PINN):
         losses.append(torch.relu(-grad[..., 0]).mean())
 
         return sum(losses)
-```
 
+```text
 ## Hybrid Models
 
 Combine data-driven and physics:
@@ -169,8 +169,8 @@ class HybridRisk(HybridModel):
         nn_pred = self.nn(x)
         physics_pred = self.physics(x)
         return 0.7 * nn_pred + 0.3 * physics_pred
-```
 
+```text
 ## Performance
 
 | Model | Training | Inference |
@@ -185,14 +185,14 @@ SciML features require PyTorch:
 
 ```bash
 pip install ununseptium[ai-torch]
-```
 
+```text
 Optional for advanced solvers:
 
 ```bash
 pip install torchdiffeq  # Neural ODE solvers
-```
 
+```text
 ## Related Documentation
 
 - [AI Overview](ai-overview.md)

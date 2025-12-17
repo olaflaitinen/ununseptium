@@ -61,8 +61,8 @@ Fixes #
 pytest tests/
 ruff check src/
 pyright src/
-```
 
+```text
 ## Documentation
 
 <!-- Did you update documentation? -->

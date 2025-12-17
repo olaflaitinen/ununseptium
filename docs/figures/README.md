@@ -17,8 +17,8 @@ Figures are generated deterministically using `scripts/generate_figures.py`:
 
 ```bash
 python scripts/generate_figures.py --output-dir docs/figures --format svg
-```
 
+```text
 All figures use a fixed random seed (42) for reproducibility.
 
 ## Figure Catalog
@@ -108,8 +108,8 @@ To regenerate all figures:
 ```bash
 cd /path/to/ununseptium
 python scripts/generate_figures.py
-```
 
+```text
 Requirements:
 - matplotlib
 - numpy

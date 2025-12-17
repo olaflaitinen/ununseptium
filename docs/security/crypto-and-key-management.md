@@ -36,8 +36,8 @@ graph TB
         KEY2[Key] --> DEC
         DEC --> PLAIN2[Plaintext]
     end
-```
 
+```text
 ## Supported Algorithms
 
 | Algorithm | Use Case | Security Level |
@@ -64,8 +64,8 @@ enc.generate_key()
 
 ciphertext = enc.encrypt(b"sensitive data")
 plaintext = enc.decrypt(ciphertext)
-```
 
+```text
 ### Algorithm Selection
 
 $$\text{Security} = f(\text{Algorithm}, \text{KeySize}, \text{Implementation})$$
@@ -91,8 +91,8 @@ enc.generate_key()
 
 # Export key (store securely!)
 key_bytes = enc.export_key()
-```
 
+```text
 ### Key Storage
 
 | Storage Method | Security | Use Case |
@@ -113,8 +113,8 @@ enc.load_key(key_bytes)
 # Load from file (ensure file is encrypted at rest)
 with open("key.bin", "rb") as f:
     enc.load_key(f.read())
-```
 
+```text
 ### Key Rotation
 
 Regular key rotation reduces exposure:
@@ -125,8 +125,8 @@ new_key = enc.rotate_key()
 
 # Re-encrypt data with new key
 new_ciphertext = enc.encrypt(enc.decrypt(old_ciphertext))
-```
 
+```text
 #### Rotation Schedule
 
 | Data Sensitivity | Rotation Frequency |
@@ -149,8 +149,8 @@ key = derive_key(
     salt=b"random_salt",
     iterations=600000,  # OWASP recommended
 )
-```
 
+```text
 ### PBKDF2 Parameters
 
 $$\text{Key} = \text{PBKDF2}(\text{Password}, \text{Salt}, \text{Iterations})$$
@@ -172,8 +172,8 @@ Used for integrity verification:
 from ununseptium.security import compute_hash
 
 hash_value = compute_hash(data)
-```
 
+```text
 ### Hash Chain
 
 Audit log integrity:
@@ -186,16 +186,16 @@ $$H_n = \text{SHA256}(H_{n-1} \| \text{data}_n)$$
 
 ```python
 ciphertext = enc.encrypt(b"single value")
-```
 
+```text
 ### Streaming (Large Data)
 
 ```python
 # For large files
 with enc.stream_encrypt("input.bin", "output.enc") as stream:
     stream.process()
-```
 
+```text
 ## Error Handling
 
 | Error | Cause | Action |
@@ -211,8 +211,8 @@ try:
     plaintext = enc.decrypt(ciphertext)
 except InvalidToken:
     log.error("Decryption failed - invalid key or corrupted data")
-```
 
+```text
 ## Security Best Practices
 
 | Practice | Implementation |
@@ -234,8 +234,8 @@ print(enc.backend)  # "fernet" or "xor"
 # Warn if using fallback
 if enc.backend == "xor":
     warnings.warn("Using insecure XOR fallback!")
-```
 
+```text
 ## Configuration
 
 ```python
@@ -246,8 +246,8 @@ config = SecurityConfig(
     require_production_crypto=True,  # Fail if cryptography unavailable
     key_rotation_days=90,
 )
-```
 
+```text
 ## CLI Commands
 
 ```bash
@@ -259,8 +259,8 @@ ununseptium crypto encrypt --key key.bin input.txt output.enc
 
 # Decrypt file
 ununseptium crypto decrypt --key key.bin output.enc decrypted.txt
-```
 
+```text
 ## Related Documentation
 
 - [Security Overview](security-overview.md)

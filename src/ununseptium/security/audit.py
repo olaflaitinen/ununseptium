@@ -108,7 +108,7 @@ class HashChain:
             "index": len(self._entries),
             "prev_hash": prev_hash,
             "data": data,
-            "timestamp": datetime.utcnow().isoformat(),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
         }
 
         entry_hash = deterministic_hash(chain_data, algorithm=self.algorithm)
@@ -376,14 +376,14 @@ class AuditVerifier:
                 entry_count=len(log),
                 failed_index=index,
                 message=message,
-                verified_at=datetime.utcnow(),
+                verified_at=datetime.now(timezone.utc),
             )
         except Exception as e:
             return VerificationResult(
                 is_valid=False,
                 entry_count=0,
                 message=f"Verification failed: {e}",
-                verified_at=datetime.utcnow(),
+                verified_at=datetime.now(timezone.utc),
             )
 
     def verify_log(self, log: AuditLog) -> VerificationResult:
@@ -402,7 +402,7 @@ class AuditVerifier:
             entry_count=len(log),
             failed_index=index,
             message=message,
-            verified_at=datetime.utcnow(),
+            verified_at=datetime.now(timezone.utc),
         )
 
 

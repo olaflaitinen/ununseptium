@@ -85,16 +85,16 @@ Ununseptium provides computational primitives and frameworks for building compli
 
 ```bash
 pip install ununseptium
-```
 
+```text
 ### From Source
 
 ```bash
-git clone https://github.com/olaflaitinen/ununseptium.git
+git clone <https://github.com/olaflaitinen/ununseptium.git>
 cd ununseptium
 pip install -e ".[dev]"
-```
 
+```text
 ### Optional Dependencies
 
 ```bash
@@ -106,8 +106,8 @@ pip install ununseptium[ml]
 
 # All optional dependencies
 pip install ununseptium[all]
-```
 
+```text
 ---
 
 ## Quick Start
@@ -130,8 +130,8 @@ result = verifier.verify(identity)
 print(f"Status: {result.status}")
 print(f"Risk Level: {result.risk_level}")
 print(f"Reason Codes: {result.reason_codes}")
-```
 
+```text
 ### Transaction Monitoring
 
 ```python
@@ -148,8 +148,8 @@ alerts = detector.detect(transactions)
 
 for alert in alerts:
     print(f"Typology: {alert.typology_type}, Score: {alert.score}")
-```
 
+```text
 ### Tamper-Evident Audit
 
 ```python
@@ -165,8 +165,8 @@ assert log.verify() is True
 
 # Save with hash chain
 log.save("audit.log")
-```
 
+```text
 ---
 
 ## Architecture
@@ -211,8 +211,8 @@ graph TB
 
     SEC --> CORE
     PLUG --> CORE
-```
 
+```text
 ### Module Summary
 
 | Module | Purpose | Key Components |
@@ -282,8 +282,8 @@ result = verifier.verify_file("audit.log")
 
 if not result.is_valid:
     raise SecurityError(f"Tamper detected at entry {result.failed_index}")
-```
 
+```text
 ### Audit Entry Schema
 
 | Field | Type | Description |
@@ -316,8 +316,8 @@ predictor.calibrate(y_cal, y_pred_cal)
 
 pred_set = predictor.predict(y_new)
 print(f"Interval: [{pred_set.lower}, {pred_set.upper}]")
-```
 
+```text
 ### Extreme Value Theory
 
 Tail risk via Generalized Pareto Distribution:
@@ -349,8 +349,8 @@ from ununseptium.model_zoo import PretrainedModel
 
 model = PretrainedModel.load("aml-transaction-risk-v1")
 result = model.predict(features)
-```
 
+```text
 See [docs/model-zoo/model-zoo.md](docs/model-zoo/model-zoo.md) for the complete model catalog.
 
 ---
@@ -378,8 +378,8 @@ ununseptium audit show audit.log --limit 20
 
 # Validate model card
 ununseptium model validate model_card.json
-```
 
+```text
 ---
 
 ## Documentation
@@ -424,11 +424,11 @@ If you use ununseptium in academic work, please cite:
   author = {Laitinen, Olaf},
   title = {Ununseptium: RegTech and Cybersecurity Library},
   year = {2025},
-  url = {https://github.com/olaflaitinen/ununseptium},
+  url = {<https://github.com/olaflaitinen/ununseptium>},
   version = {1.0.0}
 }
-```
 
+```text
 See [CITATION.md](CITATION.md) for additional citation formats.
 
 ---

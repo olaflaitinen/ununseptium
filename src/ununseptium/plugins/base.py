@@ -154,7 +154,7 @@ class Plugin(ABC):
         """
         self._state = state
         if state == PluginState.INITIALIZED:
-            self._initialized_at = datetime.utcnow()
+            self._initialized_at = datetime.now(timezone.utc)
 
     def set_error(self, error: Exception) -> None:
         """Set error state.

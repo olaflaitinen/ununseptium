@@ -104,7 +104,7 @@ class ModelCard(BaseModel):
         """
         self.stage = new_stage
         self.approved_by = approved_by
-        self.updated_at = datetime.utcnow()
+        self.updated_at = datetime.now(timezone.utc)
 
 
 class ValidationResult(BaseModel):
@@ -349,7 +349,7 @@ class ModelRegistry:
         Args:
             model_card: Updated model card.
         """
-        model_card.updated_at = datetime.utcnow()
+        model_card.updated_at = datetime.now(timezone.utc)
         self._models[model_card.model_id] = model_card
 
     def delete(self, model_id: str) -> bool:

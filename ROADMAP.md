@@ -118,8 +118,8 @@ gantt
     Real-time streaming   :2026-05, 2026-08
     section v2.0.x
     API redesign          :2026-09, 2026-12
-```
 
+```text
 ### Post-1.0.x Considerations
 
 The following features are under consideration for future releases. Inclusion is not guaranteed.

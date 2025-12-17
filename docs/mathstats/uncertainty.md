@@ -54,8 +54,8 @@ predictor.calibrate(y_cal, y_pred_cal)
 # Get prediction intervals
 interval = predictor.predict(y_pred_new)
 print(f"Prediction: [{interval.lower:.2f}, {interval.upper:.2f}]")
-```
 
+```text
 ### Batch Prediction
 
 ```python
@@ -64,8 +64,8 @@ intervals = predictor.predict_batch(y_pred_batch)
 
 for i, interval in enumerate(intervals):
     print(f"Point {i}: [{interval.lower:.2f}, {interval.upper:.2f}]")
-```
 
+```text
 ## Nonconformity Scores
 
 ### Regression
@@ -74,9 +74,9 @@ For regression, common scores:
 
 | Score | Formula | Use Case |
 |-------|---------|----------|
-| Absolute residual | $|y - \hat{y}|$ | Symmetric errors |
+| Absolute residual | $\|y - \hat{y}\|$ | Symmetric errors |
 | Signed residual | $y - \hat{y}$ | Asymmetric errors |
-| Normalized | $\frac{|y - \hat{y}|}{\hat{\sigma}}$ | Heteroscedastic |
+| Normalized | $\frac{\|y - \hat{y}\|}{\hat{\sigma}}$ | Heteroscedastic |
 
 ```python
 # Use normalized score for heteroscedastic data
@@ -85,8 +85,8 @@ predictor = ConformalPredictor(
     score="normalized",
 )
 predictor.calibrate(y_cal, y_pred_cal, sigma_cal)
-```
 
+```text
 ### Classification
 
 For classification:
@@ -104,8 +104,8 @@ classifier.calibrate(y_cal, proba_cal)
 # Get prediction set
 pred_set = classifier.predict(proba_new)
 print(f"Prediction set: {pred_set}")  # e.g., {0, 2}
-```
 
+```text
 ## Calibration
 
 ### Quantile Computation
@@ -121,8 +121,8 @@ Where $s_i$ are nonconformity scores on calibration set.
 info = predictor.calibration_info()
 print(f"Quantile: {info.quantile}")
 print(f"Calibration size: {info.n_calibration}")
-```
 
+```text
 ### Calibration Size
 
 Larger calibration sets give tighter intervals:
@@ -145,8 +145,8 @@ cqr = CQR(alpha=0.1)
 cqr.calibrate(y_cal, lower_cal, upper_cal)
 
 interval = cqr.predict(lower_new, upper_new)
-```
 
+```text
 CQR provides adaptive intervals that are wider where uncertainty is higher.
 
 ### Weighted Conformal Prediction
@@ -158,8 +158,8 @@ from ununseptium.mathstats import WeightedConformal
 
 wcp = WeightedConformal(alpha=0.1)
 wcp.calibrate(y_cal, y_pred_cal, weights=importance_weights)
-```
 
+```text
 ## Risk Score Application
 
 ### Transaction Risk with Uncertainty
@@ -181,8 +181,8 @@ y_pred = monitor.predict(X_new)
 interval = cp.predict(y_pred)
 
 print(f"Risk: {y_pred:.2f} [{interval.lower:.2f}, {interval.upper:.2f}]")
-```
 
+```text
 ### Decision Rules with Uncertainty
 
 | Condition | Decision |
@@ -200,8 +200,8 @@ print(f"Risk: {y_pred:.2f} [{interval.lower:.2f}, {interval.upper:.2f}]")
 coverage = predictor.evaluate_coverage(y_test, y_pred_test)
 print(f"Empirical coverage: {coverage:.2%}")
 # Should be >= (1 - alpha)
-```
 
+```text
 ### Interval Width
 
 ```python
@@ -209,8 +209,8 @@ print(f"Empirical coverage: {coverage:.2%}")
 widths = predictor.evaluate_width(y_pred_test)
 print(f"Mean width: {widths.mean():.3f}")
 print(f"Median width: {widths.median():.3f}")
-```
 
+```text
 ## Visualization
 
 ```mermaid
@@ -223,8 +223,8 @@ graph LR
 
     NEW[New Point] --> INTERVAL
     INTERVAL --> OUTPUT[Prediction Set]
-```
 
+```text
 ## Performance
 
 | Operation | Complexity | Notes |

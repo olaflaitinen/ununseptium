@@ -34,8 +34,8 @@ graph LR
     THRESHOLD --> EXCEED[Exceedances]
     EXCEED --> GPD[Fit GPD]
     GPD --> TAIL[Tail Estimates]
-```
 
+```text
 ### GPD Distribution
 
 $$F(x) = 1 - \left(1 + \xi \frac{x}{\sigma}\right)^{-1/\xi}$$
@@ -71,8 +71,8 @@ analyzer.fit(losses, threshold=100)
 # Get parameters
 print(f"Shape (xi): {analyzer.xi:.3f}")
 print(f"Scale (sigma): {analyzer.sigma:.3f}")
-```
 
+```text
 ### Risk Measures
 
 ```python
@@ -89,8 +89,8 @@ prob = analyzer.tail_probability(extreme_value)
 print(f"VaR 99%: {var_99:.2f}")
 print(f"ES 99%: {es_99:.2f}")
 print(f"P(X > {extreme_value}): {prob:.6f}")
-```
 
+```text
 ## VaR and ES Formulas
 
 ### Value at Risk
@@ -121,8 +121,8 @@ analyzer.plot_parameter_stability()
 
 # Automatic selection
 threshold = analyzer.select_threshold(method="eyeball")
-```
 
+```text
 | Method | Description |
 |--------|-------------|
 | `eyeball` | Parameter stability |
@@ -149,8 +149,8 @@ ci = analyzer.confidence_interval(
 )
 
 print(f"VaR 99% CI: [{ci.lower:.2f}, {ci.upper:.2f}]")
-```
 
+```text
 ## Application: Transaction Risk
 
 ```python
@@ -173,8 +173,8 @@ if prob < 0.001:  # Less than 1 in 1000
         type="extreme_transaction",
         details={"amount": new_amount, "probability": prob}
     )
-```
 
+```text
 ## Diagnostics
 
 ### QQ Plot
@@ -185,8 +185,8 @@ qq_data = analyzer.qq_plot_data()
 
 # Check if GPD fit is good
 # Points should follow diagonal
-```
 
+```text
 ### Return Level Plot
 
 ```python
@@ -197,8 +197,8 @@ return_levels = analyzer.return_levels(
 
 for period, level in return_levels.items():
     print(f"{period}-observation return level: {level:.2f}")
-```
 
+```text
 ## Multivariate Extension
 
 For correlated extremes:
@@ -209,8 +209,8 @@ from ununseptium.mathstats import EVTAnalyzer
 # Analyze tail dependence
 chi = analyzer.tail_dependence_coefficient(losses1, losses2)
 print(f"Tail dependence: {chi:.3f}")
-```
 
+```text
 ## Performance
 
 | Operation | Complexity |

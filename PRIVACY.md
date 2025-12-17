@@ -57,8 +57,8 @@ graph LR
     PROC --> AUDIT
     OUTPUT --> STORAGE
     AUDIT --> STORAGE
-```
 
+```text
 ### What the Library Does NOT Do
 
 | Action | Status |

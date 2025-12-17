@@ -76,8 +76,8 @@ graph TB
     MATH --> CORE
 
     PLUG --> CORE
-```
 
+```text
 ## Module Descriptions
 
 | Module | Purpose | Key Components |
@@ -121,8 +121,8 @@ graph LR
     SEC[security] --> CRYPTO
     AI[ai] --> TORCH
     MATH[mathstats] --> NETWORKX
-```
 
+```text
 ### Dependency Layers
 
 | Layer | Dependencies | Optional |
@@ -135,7 +135,7 @@ graph LR
 
 ## Package Structure
 
-```
+```text
 src/ununseptium/
     __init__.py          # Package root
     py.typed             # PEP 561 marker
@@ -193,8 +193,8 @@ src/ununseptium/
         __init__.py
         discovery.py     # Plugin loading
         base.py          # Plugin base
-```
 
+```text
 ## Key Abstractions
 
 ### Configuration
@@ -206,8 +206,8 @@ from ununseptium.core import Config
 
 config = Config()
 config.kyc.verification_threshold = 0.8
-```
 
+```text
 ### Error Handling
 
 Hierarchical exceptions:
@@ -231,8 +231,8 @@ from ununseptium.core.schemas import BaseSchema
 class Identity(BaseSchema):
     full_name: str
     date_of_birth: date
-```
 
+```text
 ## Cross-Cutting Concerns
 
 | Concern | Implementation |

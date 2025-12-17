@@ -46,8 +46,8 @@ graph TB
     COPULA --> SCIPY
     SEQ --> NUMPY
     GRAPH --> NETWORKX
-```
 
+```text
 ## Method Overview
 
 | Method | Use Case | Document |
@@ -74,8 +74,8 @@ predictor.calibrate(y_cal, y_pred_cal)
 # Prediction with uncertainty
 interval = predictor.predict(y_pred_new)
 print(f"[{interval.lower}, {interval.upper}]")
-```
 
+```text
 ### Extreme Value Theory
 
 Tail risk estimation:
@@ -89,8 +89,8 @@ analyzer.fit(losses, threshold="auto")
 # Estimate rare event probability
 prob = analyzer.tail_probability(extreme_value)
 var_99 = analyzer.value_at_risk(0.99)
-```
 
+```text
 ### Hawkes Processes
 
 Event clustering analysis:
@@ -103,8 +103,8 @@ hawkes.fit(event_times)
 
 # Predict future intensity
 intensity = hawkes.intensity(future_time)
-```
 
+```text
 ### Sequential Detection
 
 Real-time change detection:
@@ -117,8 +117,8 @@ detector = CUSUM(threshold=5.0)
 for observation in stream:
     if detector.update(observation):
         print("Change detected!")
-```
 
+```text
 ## Mathematical Foundations
 
 ### Coverage Guarantee
@@ -161,8 +161,8 @@ samples = copula.sample(1000)
 
 # Compute dependence metrics
 kendall_tau = copula.kendall_tau()
-```
 
+```text
 ### Supported Copulas
 
 | Copula | Tail Dependence | Use Case |

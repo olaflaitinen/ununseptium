@@ -47,8 +47,8 @@ graph TB
     P1 --> ENTRY
     P2 --> ENTRY
     P3 --> ENTRY
-```
 
+```text
 ## Plugin Types
 
 | Type | Purpose | Hook Location |
@@ -66,8 +66,8 @@ Plugins register via `pyproject.toml`:
 ```toml
 [project.entry-points."ununseptium.plugins"]
 my_plugin = "my_package.plugin:MyPlugin"
-```
 
+```text
 Or `setup.py`:
 
 ```python
@@ -76,8 +76,8 @@ entry_points={
         "my_plugin = my_package.plugin:MyPlugin",
     ],
 }
-```
 
+```text
 ## Plugin Interface
 
 ### Base Plugin Class
@@ -108,8 +108,8 @@ class Plugin(ABC):
     def shutdown(self) -> None:
         """Called when plugin is unloaded."""
         pass
-```
 
+```text
 ### Hook-Specific Interfaces
 
 | Hook | Interface | Required Methods |
@@ -141,8 +141,8 @@ sequenceDiagram
     App->>Registry: shutdown_plugins()
     Registry->>Plugin: shutdown()
     Registry->>Plugin: unload()
-```
 
+```text
 ### Lifecycle Stages
 
 | Stage | Description | Can Fail |
@@ -165,8 +165,8 @@ registry.discover()
 
 for plugin in registry.plugins:
     print(f"{plugin.name} v{plugin.version}")
-```
 
+```text
 ### Discovery Process
 
 $$\text{Plugins} = \bigcup_{e \in \text{EntryPoints}} \text{Load}(e)$$
@@ -181,15 +181,16 @@ plugins:
   my_plugin:
     api_key: "xxx"
     timeout: 30
-```
+
+```text
 
 ```python
 class MyPlugin(Plugin):
     def initialize(self, config: dict[str, Any]) -> None:
         self.api_key = config.get("api_key")
         self.timeout = config.get("timeout", 60)
-```
 
+```text
 ## Error Handling
 
 | Error | Handling |
@@ -236,8 +237,8 @@ class CustomWatchlistPlugin(ScreenerPlugin):
                     source=self.name,
                 ))
         return matches
-```
 
+```text
 ## Plugin Registry API
 
 | Method | Description |

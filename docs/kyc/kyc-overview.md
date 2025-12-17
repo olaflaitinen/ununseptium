@@ -44,8 +44,8 @@ graph TB
     DOCUMENTS --> VERIFIER
     SCREENER --> CORE
     ENTITY --> AI
-```
 
+```text
 ## Components
 
 ### Identity
@@ -63,8 +63,8 @@ identity = Identity(
     document_number="AB123456",
     document_expiry="2030-01-01",
 )
-```
 
+```text
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `full_name` | str | Yes | Full legal name |
@@ -87,8 +87,8 @@ result = verifier.verify(identity)
 print(f"Status: {result.status}")
 print(f"Risk Level: {result.risk_level}")
 print(f"Reason Codes: {result.reason_codes}")
-```
 
+```text
 #### Verification Result
 
 | Field | Type | Description |
@@ -124,8 +124,8 @@ doc = Document(
 
 processor = DocumentProcessor()
 result = processor.validate(doc)
-```
 
+```text
 | Document Type | Supported Checks |
 |---------------|------------------|
 | Passport | MRZ validation, expiry |
@@ -149,8 +149,8 @@ for match in result.matches:
     print(f"Match: {match.name}")
     print(f"Score: {match.score}")
     print(f"Source: {match.source}")
-```
 
+```text
 #### Screening Sources
 
 | Source | Type | Description |
@@ -188,8 +188,8 @@ matches = resolver.resolve(identity, candidates)
 for match in matches:
     print(f"Candidate: {match.entity_id}")
     print(f"Confidence: {match.confidence}")
-```
 
+```text
 | Algorithm | Use Case |
 |-----------|----------|
 | Exact | Known identifiers |
@@ -213,8 +213,8 @@ graph TB
 
     SCREEN --> AUDIT[Audit Log]
     DECISION --> AUDIT
-```
 
+```text
 ## Configuration
 
 ```python
@@ -229,8 +229,8 @@ config = KYCConfig(
 )
 
 verifier = IdentityVerifier(config=config)
-```
 
+```text
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `verification_threshold` | float | 0.7 | Pass threshold |
@@ -268,8 +268,8 @@ ununseptium screen name "John Doe" --threshold 0.8
 
 # Screen with specific sources
 ununseptium screen name "John Doe" --sources sanctions,pep
-```
 
+```text
 ## Related Documentation
 
 - [AML Overview](../aml/aml-overview.md)

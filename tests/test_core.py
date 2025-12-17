@@ -16,7 +16,7 @@ class TestSettings:
 
         settings = Settings()
         assert settings is not None
-        assert settings.log_level in ["DEBUG", "INFO", "WARNING", "ERROR"]
+        assert settings.logging.level in ["DEBUG", "INFO", "WARNING", "ERROR"]
 
 
 class TestCanonicalJson:

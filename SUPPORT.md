@@ -60,11 +60,13 @@ What you expected to happen.
 What actually happened.
 
 **Minimal Reproducible Example**
+
 ```python
 # Code that reproduces the issue
-```
-```
 
+```text
+
+```text
 ## Documentation Resources
 
 ### Quick Links
@@ -94,8 +96,8 @@ Run the built-in doctor command to check your installation:
 
 ```bash
 ununseptium doctor
-```
 
+```text
 This checks:
 
 - Python version compatibility

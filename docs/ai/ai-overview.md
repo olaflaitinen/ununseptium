@@ -44,8 +44,8 @@ graph TB
     EXPLAIN --> SHAP
     GOVERN --> NUMPY
     SCIML --> TORCH
-```
 
+```text
 ## Components
 
 | Component | Purpose | See |
@@ -82,8 +82,8 @@ class TransactionFeatures(FeaturePipeline):
 # Compute features
 pipeline = TransactionFeatures(store=feature_store)
 features = pipeline.compute(account_id)
-```
 
+```text
 ### Feature Types
 
 | Type | Examples | Use Case |
@@ -107,8 +107,8 @@ class RiskModel(Model):
 
     def predict_proba(self, X):
         return self.model.predict_proba(X)
-```
 
+```text
 ### Ensemble Models
 
 ```python
@@ -121,8 +121,8 @@ ensemble = EnsembleModel(
 )
 
 predictions = ensemble.predict(X)
-```
 
+```text
 Ensemble score:
 
 $$\hat{y} = \sum_{i=1}^{n} w_i \cdot f_i(x)$$
@@ -153,8 +153,8 @@ for factor in explanation.top_features(5):
 
 # Batch explanations
 explanations = explainer.explain_batch(X_batch)
-```
 
+```text
 ### SHAP Values
 
 For prediction $f(x)$:
@@ -177,8 +177,8 @@ importance = explainer.feature_importance(X)
 
 for name, value in importance.items():
     print(f"{name}: {value:.4f}")
-```
 
+```text
 ## Model Calibration
 
 Ensure probabilities are well-calibrated:
@@ -190,8 +190,8 @@ calibrated = CalibratedModel(model, method="isotonic")
 calibrated.fit(X_cal, y_cal)
 
 proba = calibrated.predict_proba(X_test)
-```
 
+```text
 ### Calibration Methods
 
 | Method | Description |
@@ -217,8 +217,8 @@ thresholded = ThresholdModel(
 )
 
 decisions = thresholded.predict(X)
-```
 
+```text
 ### Threshold Selection
 
 | Strategy | Approach |
@@ -238,8 +238,8 @@ graph TB
     MODEL --> CALIBRATE[Calibration]
     CALIBRATE --> EXPLAIN[Explainability]
     EXPLAIN --> OUTPUT[Result]
-```
 
+```text
 ## Performance Optimization
 
 ### Batch Processing
@@ -247,8 +247,8 @@ graph TB
 ```python
 # Process in batches for efficiency
 results = model.predict_batch(X, batch_size=256)
-```
 
+```text
 | Batch Size | Throughput | Latency |
 |------------|------------|---------|
 | 1 | 100/s | 10ms |
@@ -261,8 +261,8 @@ results = model.predict_batch(X, batch_size=256)
 from ununseptium.ai import CachedModel
 
 cached = CachedModel(model, cache_ttl=300)  # 5 minutes
-```
 
+```text
 ## Integration with AML/KYC
 
 ```python
@@ -281,8 +281,8 @@ result = verifier.verify(identity)
 if result.risk_level == "high":
     explanation = explainer.explain(result.features)
     print(f"Risk factors: {explanation.top_features(3)}")
-```
 
+```text
 ## Related Documentation
 
 - [SciML](sciml.md)

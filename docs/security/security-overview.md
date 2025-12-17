@@ -43,8 +43,8 @@ graph TB
     CRYPTO --> CRYPTOLIB
     ACCESS --> CORE
     AUDIT --> CORE
-```
 
+```text
 ## Components
 
 ### PII Detection
@@ -61,8 +61,8 @@ for finding in findings:
     print(f"Type: {finding.pii_type}")
     print(f"Value: {finding.value}")
     print(f"Position: {finding.start}-{finding.end}")
-```
 
+```text
 #### Supported PII Types
 
 | Type | Pattern | Examples |
@@ -86,8 +86,8 @@ custom = PIIPattern(
 )
 
 scanner = PIIScanner(patterns=[custom])
-```
 
+```text
 ### Data Masking
 
 Tokenization and redaction:
@@ -105,8 +105,8 @@ original = masker.unmask(masked, tokens)
 
 # Redact (non-reversible)
 redacted = masker.redact(text)
-```
 
+```text
 #### Masking Strategies
 
 | Strategy | Reversible | Output |
@@ -131,8 +131,8 @@ ciphertext = encryptor.encrypt(b"sensitive data")
 
 # Decrypt
 plaintext = encryptor.decrypt(ciphertext)
-```
 
+```text
 #### Encryption Backends
 
 | Backend | Algorithm | Security Level |
@@ -153,8 +153,8 @@ encryptor.load_key(key)
 
 # Rotate key
 encryptor.rotate_key()
-```
 
+```text
 ### Access Control
 
 Role-based access control:
@@ -179,8 +179,8 @@ manager.add_role(analyst)
 if manager.check(user, Permission.READ_CASES):
     # Allow access
     pass
-```
 
+```text
 #### Permission Model
 
 ```mermaid
@@ -189,8 +189,8 @@ graph TB
     ROLE --> PERM1[Permission 1]
     ROLE --> PERM2[Permission 2]
     ROLE --> PERM3[Permission 3]
-```
 
+```text
 | Permission Level | Access |
 |------------------|--------|
 | READ | View data |
@@ -219,8 +219,8 @@ log.save("audit.log")
 
 # Verify integrity
 assert log.verify(), "Tampering detected"
-```
 
+```text
 #### Hash Chain
 
 Each entry is linked to its predecessor:
@@ -234,8 +234,8 @@ graph LR
     E1[Entry 1<br>H1] --> E2[Entry 2<br>H2=SHA256 H1+E2]
     E2 --> E3[Entry 3<br>H3=SHA256 H2+E3]
     E3 --> E4[Entry 4<br>H4=SHA256 H3+E4]
-```
 
+```text
 #### Audit Entry Schema
 
 | Field | Type | Description |
@@ -263,8 +263,8 @@ graph TB
     ENCRYPT -->|No| OUTPUT[Output]
     ENC --> OUTPUT
     OUTPUT --> AUDIT[Audit Log]
-```
 
+```text
 ## Configuration
 
 ```python
@@ -276,8 +276,8 @@ config = SecurityConfig(
     pii_detection_enabled=True,
     masking_strategy="tokenization",
 )
-```
 
+```text
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `encryption_enabled` | bool | True | Enable encryption |
@@ -296,8 +296,8 @@ ununseptium audit show audit.log --limit 20
 
 # Export audit log
 ununseptium audit export audit.log --format json --output export.json
-```
 
+```text
 ## Related Documentation
 
 - [Threat Model](threat-model.md)

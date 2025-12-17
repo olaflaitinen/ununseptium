@@ -23,8 +23,9 @@ from ununseptium.core.errors import (
     ValidationError,
 )
 
+
 # Lazy import for cli to avoid circular import
-def __getattr__(name: str):
+def __getattr__(name: str) -> object:
     """Lazy import for cli module."""
     if name == "cli":
         from ununseptium import cli as _cli

@@ -55,11 +55,11 @@ No. Ununseptium provides computational primitives that can be used to build comp
 pip install ununseptium
 
 # From source
-git clone https://github.com/olaflaitinen/ununseptium.git
+git clone <https://github.com/olaflaitinen/ununseptium.git>
 cd ununseptium
 pip install -e ".[dev]"
-```
 
+```text
 ### What are the optional dependencies?
 
 | Extra | Contents | Command |
@@ -76,8 +76,8 @@ pip install -e ".[dev]"
 
 ```bash
 ununseptium doctor
-```
 
+```text
 This checks Python version, dependencies, and configuration.
 
 ## Usage
@@ -96,8 +96,8 @@ identity = Identity(
 verifier = IdentityVerifier()
 result = verifier.verify(identity)
 print(f"Status: {result.status}")
-```
 
+```text
 ### How do I screen against watchlists?
 
 ```python
@@ -106,8 +106,8 @@ from ununseptium.kyc import Screener
 screener = Screener()
 result = screener.screen_name("John Doe", threshold=0.8)
 print(f"Matches: {result.matches}")
-```
 
+```text
 ### How do I create an audit log?
 
 ```python
@@ -119,8 +119,8 @@ log.save("audit.log")
 
 # Later: verify integrity
 assert log.verify(), "Tampering detected"
-```
 
+```text
 ### How do I detect PII?
 
 ```python
@@ -129,8 +129,8 @@ from ununseptium.security import PIIScanner
 scanner = PIIScanner()
 findings = scanner.scan("My SSN is 123-45-6789")
 print(f"Found: {findings}")
-```
 
+```text
 ## Security
 
 ### Is the encryption secure?
@@ -180,8 +180,8 @@ from ununseptium.ai import RiskModel
 
 model = RiskModel()
 model.to("cuda")  # GPU acceleration
-```
 
+```text
 ## Model Zoo
 
 ### What pretrained models are available?
@@ -201,8 +201,8 @@ from ununseptium.model_zoo import PretrainedModel
 
 model = PretrainedModel.load("aml-transaction-risk-v1")
 result = model.predict(features)
-```
 
+```text
 ## Troubleshooting
 
 ### Why do I get ModuleNotFoundError?
@@ -211,8 +211,8 @@ Ensure you installed optional dependencies:
 
 ```bash
 pip install ununseptium[all]
-```
 
+```text
 ### Why is my audit log failing verification?
 
 Common causes:
@@ -231,8 +231,8 @@ ununseptium config export --output config.json
 
 # Validate configuration
 ununseptium config validate
-```
 
+```text
 ## Contributing
 
 ### How do I contribute?
@@ -245,7 +245,7 @@ See [CONTRIBUTING.md](../CONTRIBUTING.md) for:
 
 ### Where do I report bugs?
 
-Open an issue at: https://github.com/olaflaitinen/ununseptium/issues
+Open an issue at: <https://github.com/olaflaitinen/ununseptium/issues>
 
 ## References
 

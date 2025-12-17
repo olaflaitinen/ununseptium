@@ -57,8 +57,8 @@ print(f"Baseline mu: {hawkes.mu:.4f}")
 print(f"Excitation alpha: {hawkes.alpha:.4f}")
 print(f"Decay beta: {hawkes.beta:.4f}")
 print(f"Branching ratio: {hawkes.branching_ratio:.3f}")
-```
 
+```text
 ### Intensity Computation
 
 ```python
@@ -68,8 +68,8 @@ intensity = hawkes.intensity(t=100.0)
 # Compute intensity over time range
 times = np.linspace(0, 200, 1000)
 intensities = [hawkes.intensity(t) for t in times]
-```
 
+```text
 ### Simulation
 
 ```python
@@ -80,8 +80,8 @@ simulated_times = hawkes.simulate(
 )
 
 print(f"Generated {len(simulated_times)} events")
-```
 
+```text
 ## Visualization
 
 ```mermaid
@@ -100,8 +100,8 @@ graph TB
     DECAY2 --> SUM
     DECAY3 --> SUM
     BASELINE[Baseline mu] --> SUM
-```
 
+```text
 ## Kernel Functions
 
 ### Exponential (Default)
@@ -110,16 +110,16 @@ $$g(t) = \alpha e^{-\beta t}$$
 
 ```python
 hawkes = HawkesProcess(kernel="exponential")
-```
 
+```text
 ### Power Law
 
 $$g(t) = \frac{\alpha}{(1 + t/\tau)^{1+\theta}}$$
 
 ```python
 hawkes = HawkesProcess(kernel="power_law")
-```
 
+```text
 ### Kernel Comparison
 
 | Kernel | Memory | Use Case |
@@ -142,14 +142,14 @@ hawkes.fit(event_times, method="mle")
 # Get log-likelihood
 ll = hawkes.log_likelihood()
 print(f"Log-likelihood: {ll:.2f}")
-```
 
+```text
 ### Expectation-Maximization
 
 ```python
 hawkes.fit(event_times, method="em", max_iter=100)
-```
 
+```text
 ## Branching Structure
 
 ### Declustering
@@ -165,8 +165,8 @@ for i, origin in enumerate(origins):
         print(f"Event {i}: Background")
     else:
         print(f"Event {i}: Triggered by event {origin}")
-```
 
+```text
 ### Cluster Statistics
 
 ```python
@@ -174,8 +174,8 @@ clusters = hawkes.identify_clusters(event_times)
 
 print(f"Number of clusters: {len(clusters)}")
 print(f"Mean cluster size: {np.mean([len(c) for c in clusters]):.2f}")
-```
 
+```text
 ## Application: Transaction Bursts
 
 ```python
@@ -198,8 +198,8 @@ if hawkes.branching_ratio > 0.8:
             "baseline_rate": hawkes.mu,
         }
     )
-```
 
+```text
 ### Burst Detection
 
 ```python
@@ -210,8 +210,8 @@ baseline = hawkes.mu
 # Alert if intensity much higher than baseline
 if current_intensity > 5 * baseline:
     print("Transaction burst detected!")
-```
 
+```text
 ## Goodness of Fit
 
 ### Residual Analysis
@@ -230,8 +230,8 @@ residuals = hawkes.residual_process(event_times)
 from scipy.stats import kstest
 stat, pvalue = kstest(np.diff(residuals), "expon")
 print(f"KS test p-value: {pvalue:.4f}")
-```
 
+```text
 ## Multivariate Extension
 
 For interacting processes:
@@ -246,8 +246,8 @@ mhawkes.fit([times_1, times_2])
 # Cross-excitation matrix
 print("Excitation matrix:")
 print(mhawkes.alpha_matrix)
-```
 
+```text
 ## Performance
 
 | Operation | Complexity |

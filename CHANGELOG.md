@@ -107,5 +107,5 @@ No unreleased changes.
 
 ---
 
-[Unreleased]: https://github.com/olaflaitinen/ununseptium/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/olaflaitinen/ununseptium/releases/tag/v1.0.0
+[Unreleased]: <https://github.com/olaflaitinen/ununseptium/compare/v1.0.0...HEAD>
+[1.0.0]: <https://github.com/olaflaitinen/ununseptium/releases/tag/v1.0.0>

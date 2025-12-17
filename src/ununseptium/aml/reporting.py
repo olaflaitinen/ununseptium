@@ -133,7 +133,7 @@ class SARReport(BaseModel):
     def submit(self) -> None:
         """Mark report as submitted."""
         self.status = ReportStatus.SUBMITTED
-        self.submitted_at = datetime.utcnow()
+        self.submitted_at = datetime.now(timezone.utc)
 
     def acknowledge(self, acknowledgment_number: str) -> None:
         """Record regulatory acknowledgment.

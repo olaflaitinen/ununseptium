@@ -47,8 +47,8 @@ graph TB
     TYPOLOGY --> CASE
     CASE --> REPORT
     CASE --> CORE
-```
 
+```text
 ## Components
 
 ### Transaction
@@ -67,8 +67,8 @@ tx = Transaction(
     currency="USD",
     type="wire",
 )
-```
 
+```text
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `id` | str | Yes | Unique identifier |
@@ -97,8 +97,8 @@ results = monitor.process_batch(transactions)
 for alert in results.alerts:
     print(f"Alert: {alert.typology}")
     print(f"Score: {alert.score}")
-```
 
+```text
 #### Monitoring Result
 
 | Field | Type | Description |
@@ -122,8 +122,8 @@ for alert in alerts:
     print(f"Typology: {alert.typology_type}")
     print(f"Accounts: {alert.accounts}")
     print(f"Transactions: {alert.transaction_ids}")
-```
 
+```text
 #### Supported Typologies
 
 | Typology | Description | Detection Method |
@@ -165,8 +165,8 @@ detector = StructuringDetector(
 )
 
 score = detector.score(transactions)
-```
 
+```text
 #### Graph-Based Detection
 
 ```mermaid
@@ -175,8 +175,8 @@ graph LR
     B -->|$4.8k| C[Account C]
     C -->|$4.5k| D[Account D]
     D -->|$4k| A
-```
 
+```text
 Round-trip detection using graph cycle analysis.
 
 ### Case Management
@@ -194,8 +194,8 @@ case = manager.create_case(alerts)
 print(f"Case ID: {case.id}")
 print(f"Priority: {case.priority}")
 print(f"Alerts: {len(case.alerts)}")
-```
 
+```text
 #### Case Priority
 
 | Priority | Score Range | SLA |
@@ -219,8 +219,8 @@ sar_data = reporter.prepare_sar(case)
 
 # Generate summary report
 summary = reporter.generate_summary(case)
-```
 
+```text
 | Report Type | Output | Use Case |
 |-------------|--------|----------|
 | SAR Data | JSON | Regulatory filing input |
@@ -242,8 +242,8 @@ graph TB
     THRESHOLD -->|No| LOG[Log Only]
     ALERT --> CASE[Case Queue]
     ALERT --> AUDIT[Audit Log]
-```
 
+```text
 ## Feature Engineering
 
 Computed features for each account:
@@ -270,8 +270,8 @@ config = AMLConfig(
 )
 
 monitor = TransactionMonitor(config=config)
-```
 
+```text
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `structuring_threshold` | float | 10000 | CTR threshold |
@@ -290,8 +290,8 @@ ununseptium aml detect structuring --input transactions.json
 
 # Generate case summary
 ununseptium aml case CASE-001 --summary
-```
 
+```text
 ## Performance
 
 | Operation | Throughput | P95 Latency |

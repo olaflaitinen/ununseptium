@@ -56,8 +56,8 @@ for observation in stream:
     if alert:
         print(f"Change detected at time {detector.change_time}")
         detector.reset()
-```
 
+```text
 ### Parameters
 
 | Parameter | Description | Typical Values |
@@ -111,8 +111,8 @@ for observation in stream:
     elif result == "H0":
         print("No change, resetting")
         detector.reset()
-```
 
+```text
 ### Thresholds
 
 $$A = \log \frac{\beta}{1-\alpha}$$
@@ -138,8 +138,8 @@ graph LR
     TEST -->|No| KEEP[Keep Window]
     DROP --> W
     KEEP --> W
-```
 
+```text
 ### Usage
 
 ```python
@@ -151,8 +151,8 @@ for observation in stream:
     if detector.update(observation):
         print(f"Change detected!")
         print(f"New mean estimate: {detector.mean}")
-```
 
+```text
 ### Parameters
 
 | Parameter | Description | Effect |
@@ -178,8 +178,8 @@ ensemble = EnsembleDetector(
 for observation in stream:
     if ensemble.update(observation):
         print("Ensemble detected change!")
-```
 
+```text
 ## Application: Transaction Monitoring
 
 ```python
@@ -200,8 +200,8 @@ for tx in transaction_stream:
         )
         monitor.raise_alert(alert)
         detector.reset()
-```
 
+```text
 ## Performance
 
 | Algorithm | Update | Memory |

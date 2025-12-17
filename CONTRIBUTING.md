@@ -45,7 +45,7 @@ All contributors must adhere to our [Code of Conduct](CODE_OF_CONDUCT.md). Pleas
 
 ```bash
 # Clone repository
-git clone https://github.com/olaflaitinen/ununseptium.git
+git clone <https://github.com/olaflaitinen/ununseptium.git>
 cd ununseptium
 
 # Create virtual environment
@@ -57,8 +57,8 @@ pip install -e ".[dev]"
 
 # Verify installation
 ununseptium doctor
-```
 
+```text
 ### Development Dependencies
 
 The `[dev]` extra includes:
@@ -83,16 +83,16 @@ ruff format src/ tests/
 
 # Lint code
 ruff check src/ tests/ --fix
-```
 
+```text
 ### Type Hints
 
 All code must be fully typed and pass pyright:
 
 ```bash
 pyright src/
-```
 
+```text
 ### Style Rules
 
 | Rule | Standard |
@@ -128,9 +128,10 @@ def verify_identity(
         if result.passed:
             print("Verification successful")
         ```
-    """
-```
 
+    """
+
+```text
 ## Testing Requirements
 
 ### Running Tests
@@ -147,11 +148,11 @@ pytest tests/test_kyc.py
 
 # Run with verbose output
 pytest -v
-```
 
+```text
 ### Test Structure
 
-```
+```text
 tests/
   conftest.py          # Shared fixtures
   test_core/           # Core module tests
@@ -161,8 +162,8 @@ tests/
   test_mathstats/      # MathStats module tests
   test_ai/             # AI module tests
   test_integration/    # Integration tests
-```
 
+```text
 ### Test Requirements
 
 | Requirement | Description |
@@ -195,8 +196,8 @@ class TestIdentityVerifier:
 
         with pytest.raises(ValidationError):
             verifier.verify({})  # Invalid input
-```
 
+```text
 ## Documentation Standards
 
 ### Markdown Requirements
@@ -237,14 +238,14 @@ Main documentation content.
 
 - [Reference 1](url)
 - [Reference 2](url)
-```
 
+```text
 ### Running Documentation Checks
 
 ```bash
 python scripts/docs_lint.py
-```
 
+```text
 ## Pull Request Process
 
 ### Before Submitting
@@ -276,23 +277,24 @@ python scripts/docs_lint.py
 
 Follow conventional commits:
 
-```
+```text
 type(scope): description
 
 [optional body]
 
 [optional footer]
-```
 
+```text
 Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 
 Examples:
-```
+
+```text
 feat(kyc): add document expiry validation
 fix(aml): correct structuring detection threshold
 docs(readme): add model zoo section
-```
 
+```text
 ## Questions
 
 - Open a [Discussion](https://github.com/olaflaitinen/ununseptium/discussions) for questions

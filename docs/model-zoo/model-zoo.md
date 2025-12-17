@@ -40,8 +40,8 @@ model = PretrainedModel.load("aml-transaction-risk-v1")
 
 # Make predictions
 scores = model.predict(features)
-```
 
+```text
 ### With Specific Version
 
 ```python
@@ -49,8 +49,8 @@ model = PretrainedModel.load(
     "aml-transaction-risk-v1",
     version="1.0.0",
 )
-```
 
+```text
 ## Model Details
 
 ### aml-transaction-risk-v1
@@ -120,7 +120,7 @@ Graph-based risk scoring.
 
 ## Package Structure
 
-```
+```text
 model_zoo/
     catalog.json        # Model index
     models/
@@ -128,8 +128,8 @@ model_zoo/
             model.pkl   # Model weights
             card.json   # Model card
             checksum.sha256
-```
 
+```text
 ## Integrity Verification
 
 All models include checksums:
@@ -142,8 +142,8 @@ if verify_model("aml-transaction-risk-v1"):
     model = PretrainedModel.load("aml-transaction-risk-v1")
 else:
     raise SecurityError("Model checksum mismatch!")
-```
 
+```text
 ### Checksum Format
 
 SHA-256 hash of model file:
@@ -162,8 +162,8 @@ card = get_model_card("aml-transaction-risk-v1")
 print(f"Intended use: {card.intended_use}")
 print(f"Limitations: {card.limitations}")
 print(f"Metrics: {card.metrics}")
-```
 
+```text
 ## Custom Model Registration
 
 Register your own models:
@@ -182,8 +182,8 @@ registry.register(
 
 # Later: load custom model
 custom = registry.load("my-custom-model")
-```
 
+```text
 ## Downloading Models
 
 Models are downloaded on first use:
@@ -191,8 +191,8 @@ Models are downloaded on first use:
 ```python
 # Auto-downloads if not cached
 model = PretrainedModel.load("aml-transaction-risk-v1")
-```
 
+```text
 ### Manual Download
 
 ```python
@@ -200,8 +200,8 @@ from ununseptium.model_zoo import download_model
 
 # Pre-download
 download_model("aml-transaction-risk-v1", cache_dir="~/.ununseptium/models")
-```
 
+```text
 ### Cache Location
 
 | Platform | Default Location |
@@ -229,15 +229,15 @@ for tx in transactions:
     features = extract_features(tx)
     score = model.predict(features)[0]
     print(f"Risk: {score:.3f}")
-```
 
+```text
 ### Batch Processing
 
 ```python
 # Efficient batch scoring
 scores = model.predict_batch(features_batch)
-```
 
+```text
 ## CLI Commands
 
 ```bash
@@ -252,8 +252,8 @@ ununseptium model info aml-transaction-risk-v1
 
 # Verify model
 ununseptium model verify aml-transaction-risk-v1
-```
 
+```text
 ## Performance
 
 | Operation | Latency |

@@ -54,8 +54,8 @@ graph LR
 
     H1 --> P2
     H2 --> P3
-```
 
+```text
 ### Hash Computation
 
 Each entry hash incorporates:
@@ -83,8 +83,8 @@ class AuditEntry:
     details: dict        # Additional context
     prev_hash: str       # Previous entry hash
     entry_hash: str      # This entry hash
-```
 
+```text
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `id` | str | Yes | UUID v4 |
@@ -104,8 +104,8 @@ class AuditEntry:
 def verify_entry(entry: AuditEntry, prev_hash: str) -> bool:
     expected = compute_hash(prev_hash, entry)
     return entry.entry_hash == expected
-```
 
+```text
 ### Full Chain Verification
 
 ```python
@@ -118,8 +118,8 @@ if not result.is_valid:
     print(f"Tamper detected at entry {result.failed_index}")
     print(f"Expected: {result.expected_hash}")
     print(f"Found: {result.actual_hash}")
-```
 
+```text
 ### Verification Result
 
 | Field | Type | Description |
@@ -155,8 +155,8 @@ log.append({
 })
 
 log.save("audit.log")
-```
 
+```text
 ### Querying Audit Logs
 
 ```python
@@ -174,8 +174,8 @@ recent = log.filter(
 
 # Filter by actor
 user_actions = log.filter(actor="user123")
-```
 
+```text
 ### Exporting Audit Logs
 
 ```python
@@ -191,8 +191,8 @@ log.export_json(
     start=datetime(2025, 1, 1),
     end=datetime(2025, 1, 31),
 )
-```
 
+```text
 ## Audit Actions
 
 ### Standard Action Types
@@ -216,8 +216,8 @@ log.append({
     "action": "custom:my_action",
     "details": {"custom_field": "value"}
 })
-```
 
+```text
 ## Storage Considerations
 
 ### File Format
@@ -227,8 +227,8 @@ Default format is newline-delimited JSON (NDJSON):
 ```json
 {"id":"...", "timestamp":"...", "action":"...", ...}
 {"id":"...", "timestamp":"...", "action":"...", ...}
-```
 
+```text
 ### Rotation
 
 ```python
@@ -238,8 +238,8 @@ from ununseptium.security import AuditLog
 log = AuditLog(max_size_mb=100, rotate=True)
 
 # Rotation creates: audit.log, audit.1.log, audit.2.log, ...
-```
 
+```text
 ### Retention
 
 | Consideration | Recommendation |
@@ -271,8 +271,8 @@ ununseptium audit show audit.log --action identity_verified
 
 # Export to JSON
 ununseptium audit export audit.log --format json --output export.json
-```
 
+```text
 ## Related Documentation
 
 - [Security Overview](security-overview.md)

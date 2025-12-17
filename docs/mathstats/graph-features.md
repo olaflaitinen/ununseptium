@@ -31,8 +31,8 @@ graph TD
     C -->|$2k| D
     D -->|$6k| E[Account E]
     B -->|$1k| C
-```
 
+```text
 Financial transactions form a directed weighted graph suitable for network analysis.
 
 ## Building Networks
@@ -48,8 +48,8 @@ graph.add_transactions(transactions)
 print(f"Nodes: {graph.n_nodes}")
 print(f"Edges: {graph.n_edges}")
 print(f"Density: {graph.density:.4f}")
-```
 
+```text
 ## Node Features
 
 ### Degree
@@ -68,8 +68,8 @@ degrees = graph.node_degrees()
 
 for node, deg in degrees.items():
     print(f"{node}: in={deg.in_degree}, out={deg.out_degree}")
-```
 
+```text
 ### Centrality Measures
 
 | Measure | Meaning | Use Case |
@@ -86,8 +86,8 @@ centralities = graph.compute_centralities()
 
 print(f"PageRank: {centralities['pagerank']}")
 print(f"Betweenness: {centralities['betweenness']}")
-```
 
+```text
 ### Centrality Formulas
 
 **PageRank:**
@@ -111,8 +111,8 @@ weights = graph.edge_weight_stats()
 print(f"Mean weight: {weights.mean}")
 print(f"Std weight: {weights.std}")
 print(f"Max weight: {weights.max}")
-```
 
+```text
 ### Temporal Features
 
 ```python
@@ -121,8 +121,8 @@ temporal = graph.temporal_features()
 
 print(f"Edge frequency: {temporal.frequency}")
 print(f"Last active: {temporal.last_active}")
-```
 
+```text
 ## Motif Analysis
 
 ### Common Motifs
@@ -153,8 +153,8 @@ graph TD
         C2 --> C3[C]
         C3 --> C4[D]
     end
-```
 
+```text
 ### Motif Counting
 
 ```python
@@ -164,8 +164,8 @@ motifs = graph.count_motifs()
 print(f"Triangles: {motifs['triangles']}")
 print(f"Stars (3-node): {motifs['stars_3']}")
 print(f"Cycles (4-node): {motifs['cycles_4']}")
-```
 
+```text
 ### Motif Significance
 
 Compare to random graphs:
@@ -179,8 +179,8 @@ z_scores = graph.motif_significance(n_random=100)
 for motif, z in z_scores.items():
     if abs(z) > 2:
         print(f"Significant: {motif} (z={z:.2f})")
-```
 
+```text
 ## Community Detection
 
 ```python
@@ -191,8 +191,8 @@ print(f"Number of communities: {len(communities)}")
 
 for i, community in enumerate(communities):
     print(f"Community {i}: {len(community)} nodes")
-```
 
+```text
 ### Modularity
 
 $$Q = \frac{1}{2m}\sum_{ij}\left[A_{ij} - \frac{k_i k_j}{2m}\right]\delta(c_i, c_j)$$
@@ -225,8 +225,8 @@ for account, feat in features.items():
     # High betweenness + many triangles = potential layering
     if feat["betweenness"] > 0.1 and feat["triangle_count"] > 5:
         print(f"Suspicious: {account}")
-```
 
+```text
 ### Suspicious Patterns
 
 | Pattern | Graph Signal | Typology |
@@ -246,8 +246,8 @@ for snapshot in snapshots:
     print(f"Date: {snapshot.date}")
     print(f"  Nodes: {snapshot.n_nodes}")
     print(f"  New edges: {snapshot.new_edges}")
-```
 
+```text
 ## Performance
 
 | Operation | Complexity |

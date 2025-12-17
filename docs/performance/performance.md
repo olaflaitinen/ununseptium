@@ -46,11 +46,11 @@ Tests run on:
 
 ### Identity Verification
 
-```
+```text
 Operation: IdentityVerifier.verify()
 Iterations: 10,000
-```
 
+```text
 | Metric | Value |
 |--------|-------|
 | Mean latency | 4.2ms |
@@ -61,11 +61,11 @@ Iterations: 10,000
 
 ### Name Screening
 
-```
+```text
 Operation: Screener.screen_name()
 Watchlist size: 100,000 entries
-```
 
+```text
 | Metric | Value |
 |--------|-------|
 | Mean latency | 8.5ms |
@@ -76,11 +76,11 @@ Watchlist size: 100,000 entries
 
 ### Transaction Scoring
 
-```
+```text
 Operation: TransactionMonitor.process()
 Features: 20 dimensions
-```
 
+```text
 | Metric | Value |
 |--------|-------|
 | Mean latency | 2.5ms |
@@ -152,15 +152,16 @@ $$\text{Throughput} \approx \frac{\text{Batch Size}}{\text{Fixed Cost} + \text{P
 
 ```bash
 pip install ununseptium[perf]
-```
+
+```text
 
 ```python
 # Numba-accelerated operations auto-detected
 from ununseptium.mathstats import EVTAnalyzer
 
 analyzer = EVTAnalyzer()  # Uses Numba if available
-```
 
+```text
 ## Profiling
 
 ### Timing Decorator
@@ -173,14 +174,14 @@ def my_function():
     ...
 
 # Outputs: my_function took 123.45ms
-```
 
+```text
 ### Built-in Profiling
 
 ```bash
 ununseptium profile --operation verify --iterations 1000
-```
 
+```text
 ## Reproducing Benchmarks
 
 ```bash
@@ -189,8 +190,8 @@ pytest benchmarks/ --benchmark-only
 
 # Save results
 pytest benchmarks/ --benchmark-json=results.json
-```
 
+```text
 ## Performance Figures
 
 See [figures/](../figures/) for benchmark visualizations:

@@ -19,23 +19,23 @@ See [Glossary](glossary.md) for terminology.
 
 | Resource | URL |
 |----------|-----|
-| FATF Recommendations | https://www.fatf-gafi.org/recommendations.html |
-| Guidance on Risk-Based Approach | https://www.fatf-gafi.org/guidance.html |
-| FATF Glossary | https://www.fatf-gafi.org/glossary/ |
+| FATF Recommendations | <https://www.fatf-gafi.org/recommendations.html> |
+| Guidance on Risk-Based Approach | <https://www.fatf-gafi.org/guidance.html> |
+| FATF Glossary | <https://www.fatf-gafi.org/glossary/> |
 
 ### US Regulatory
 
 | Resource | URL |
 |----------|-----|
-| Bank Secrecy Act (BSA) | https://www.fincen.gov/resources/statutes-and-regulations/bank-secrecy-act |
-| FinCEN Guidance | https://www.fincen.gov/resources/advisories |
+| Bank Secrecy Act (BSA) | <https://www.fincen.gov/resources/statutes-and-regulations/bank-secrecy-act> |
+| FinCEN Guidance | <https://www.fincen.gov/resources/advisories> |
 
 ### EU Regulatory
 
 | Resource | URL |
 |----------|-----|
-| AMLD 6 | https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L1673 |
-| EBA Guidelines | https://www.eba.europa.eu/regulation-and-policy/anti-money-laundering-and-countering-financing-terrorism |
+| AMLD 6 | <https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX>:32018L1673 |
+| EBA Guidelines | <https://www.eba.europa.eu/regulation-and-policy/anti-money-laundering-and-countering-financing-terrorism> |
 
 ## Security Standards
 
@@ -43,28 +43,28 @@ See [Glossary](glossary.md) for terminology.
 
 | Resource | URL |
 |----------|-----|
-| NIST Digital Identity Guidelines (SP 800-63) | https://pages.nist.gov/800-63-3/ |
-| NIST SSDF (SP 800-218) | https://csrc.nist.gov/publications/detail/sp/800-218/final |
-| NIST Cybersecurity Framework | https://www.nist.gov/cyberframework |
-| NIST AI Risk Management Framework | https://www.nist.gov/itl/ai-risk-management-framework |
-| NIST Privacy Framework | https://www.nist.gov/privacy-framework |
+| NIST Digital Identity Guidelines (SP 800-63) | <https://pages.nist.gov/800-63-3/> |
+| NIST SSDF (SP 800-218) | <https://csrc.nist.gov/publications/detail/sp/800-218/final> |
+| NIST Cybersecurity Framework | <https://www.nist.gov/cyberframework> |
+| NIST AI Risk Management Framework | <https://www.nist.gov/itl/ai-risk-management-framework> |
+| NIST Privacy Framework | <https://www.nist.gov/privacy-framework> |
 
 ### ISO Standards
 
 | Resource | URL |
 |----------|-----|
-| ISO/IEC 27001 (Information Security) | https://www.iso.org/standard/27001 |
-| ISO/IEC 27701 (Privacy Information) | https://www.iso.org/standard/71670.html |
-| ISO 37301 (Compliance Management) | https://www.iso.org/standard/75080.html |
+| ISO/IEC 27001 (Information Security) | <https://www.iso.org/standard/27001> |
+| ISO/IEC 27701 (Privacy Information) | <https://www.iso.org/standard/71670.html> |
+| ISO 37301 (Compliance Management) | <https://www.iso.org/standard/75080.html> |
 
 ### Supply Chain Security
 
 | Resource | URL |
 |----------|-----|
-| SLSA Framework | https://slsa.dev/ |
-| OpenSSF Scorecard | https://securityscorecards.dev/ |
-| SBOM (CycloneDX) | https://cyclonedx.org/ |
-| SPDX | https://spdx.dev/ |
+| SLSA Framework | <https://slsa.dev/> |
+| OpenSSF Scorecard | <https://securityscorecards.dev/> |
+| SBOM (CycloneDX) | <https://cyclonedx.org/> |
+| SPDX | <https://spdx.dev/> |
 
 ## Statistical and Mathematical Methods
 
@@ -103,15 +103,15 @@ See [Glossary](glossary.md) for terminology.
 
 | Resource | URL |
 |----------|-----|
-| Model Cards for Model Reporting | https://arxiv.org/abs/1810.03993 |
-| ML Model Governance | https://ai.google/responsibility/responsible-ai-practices/ |
+| Model Cards for Model Reporting | <https://arxiv.org/abs/1810.03993> |
+| ML Model Governance | <https://ai.google/responsibility/responsible-ai-practices/> |
 
 ### Explainability
 
 | Resource | URL |
 |----------|-----|
-| SHAP | https://github.com/shap/shap |
-| Interpretable ML Book | https://christophm.github.io/interpretable-ml-book/ |
+| SHAP | <https://github.com/shap/shap> |
+| Interpretable ML Book | <https://christophm.github.io/interpretable-ml-book/> |
 
 ### Scientific ML
 
@@ -126,44 +126,44 @@ See [Glossary](glossary.md) for terminology.
 
 | Resource | URL |
 |----------|-----|
-| Python | https://www.python.org/ |
-| Pydantic | https://docs.pydantic.dev/ |
-| NumPy | https://numpy.org/ |
-| SciPy | https://scipy.org/ |
-| PyTorch | https://pytorch.org/ |
+| Python | <https://www.python.org/> |
+| Pydantic | <https://docs.pydantic.dev/> |
+| NumPy | <https://numpy.org/> |
+| SciPy | <https://scipy.org/> |
+| PyTorch | <https://pytorch.org/> |
 
 ### GitHub
 
 | Resource | URL |
 |----------|-----|
-| GitHub Mermaid Documentation | https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams |
-| GitHub Math Documentation | https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions |
-| GitHub Actions | https://docs.github.com/en/actions |
+| GitHub Mermaid Documentation | <https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams> |
+| GitHub Math Documentation | <https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions> |
+| GitHub Actions | <https://docs.github.com/en/actions> |
 
 ### Documentation Standards
 
 | Resource | URL |
 |----------|-----|
-| Google Technical Writing | https://developers.google.com/tech-writing |
-| Keep a Changelog | https://keepachangelog.com/ |
-| Semantic Versioning | https://semver.org/ |
-| Citation File Format | https://citation-file-format.github.io/ |
-| Software Citation Principles | https://doi.org/10.7717/peerj-cs.86 |
+| Google Technical Writing | <https://developers.google.com/tech-writing> |
+| Keep a Changelog | <https://keepachangelog.com/> |
+| Semantic Versioning | <https://semver.org/> |
+| Citation File Format | <https://citation-file-format.github.io/> |
+| Software Citation Principles | <https://doi.org/10.7717/peerj-cs.86> |
 
 ## Privacy
 
 | Resource | URL |
 |----------|-----|
-| GDPR | https://gdpr.eu/ |
-| CCPA | https://oag.ca.gov/privacy/ccpa |
+| GDPR | <https://gdpr.eu/> |
+| CCPA | <https://oag.ca.gov/privacy/ccpa> |
 
 ## Open Source
 
 | Resource | URL |
 |----------|-----|
-| Apache License 2.0 | https://www.apache.org/licenses/LICENSE-2.0 |
-| Contributor Covenant | https://www.contributor-covenant.org/ |
-| CNCF Governance | https://www.cncf.io/governance/ |
+| Apache License 2.0 | <https://www.apache.org/licenses/LICENSE-2.0> |
+| Contributor Covenant | <https://www.contributor-covenant.org/> |
+| CNCF Governance | <https://www.cncf.io/governance/> |
 
 ## References
 

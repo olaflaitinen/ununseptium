@@ -303,7 +303,7 @@ class PIIVault:
             "value": value,  # In production: encrypt this
             "pii_type": pii_type.value,
             "entity_id": entity_id,
-            "stored_at": datetime.utcnow().isoformat(),
+            "stored_at": datetime.now(timezone.utc).isoformat(),
         }
 
         # Create lookup by value hash

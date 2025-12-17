@@ -32,8 +32,8 @@ graph LR
     ENRICH --> OUTPUT[Output]
 
     PROCESS --> AUDIT[Audit Log]
-```
 
+```text
 ## KYC Data Flow
 
 ### Identity Verification Pipeline
@@ -76,8 +76,8 @@ graph TB
     RISK --> EXPLAIN
     EXPLAIN --> RESULT
     RESULT --> AUDIT
-```
 
+```text
 ### Data Transformations
 
 | Stage | Input | Output | Transformation |
@@ -127,8 +127,8 @@ graph TB
     CLUSTER --> ALERT
     ALERT --> CASE
     CASE --> REPORT
-```
 
+```text
 ### Typology Detection Flow
 
 | Stage | Algorithm | Latency |
@@ -149,8 +149,8 @@ graph LR
     FINDINGS --> MASK[Masking]
     MASK --> SAFE[Safe Output]
     MASK --> TOKEN_MAP[Token Map]
-```
 
+```text
 ### Audit Log Flow
 
 Each operation generates an audit entry:
@@ -168,8 +168,8 @@ graph TB
     PREV --> HASH
     HASH --> CURR
     CURR --> STORE[Store Entry]
-```
 
+```text
 The hash chain formula:
 
 $$H_n = \text{SHA256}(H_{n-1} \| \text{JSON}(\text{entry}_n))$$
@@ -216,8 +216,8 @@ graph TB
     EXPLAIN --> PRED
     EXPLAIN --> CONF
     EXPLAIN --> EXPL
-```
 
+```text
 ### Batch vs Streaming
 
 | Mode | Use Case | Latency | Throughput |
@@ -237,8 +237,8 @@ class PipelineContext:
     timestamp: datetime
     user_id: str | None
     trace_id: str | None
-```
 
+```text
 | Context Field | Purpose |
 |---------------|---------|
 | `request_id` | Correlation across stages |
@@ -257,8 +257,8 @@ graph TB
     RETRY -->|Success| NEXT
     RETRY -->|Fail| LOG
     LOG --> AUDIT[Audit]
-```
 
+```text
 | Error Type | Handling |
 |------------|----------|
 | Validation | Reject input |

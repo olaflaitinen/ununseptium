@@ -72,8 +72,8 @@ card = ModelCard(
         "Human review required for adverse decisions",
     ],
 )
-```
 
+```text
 ## Model Card Fields
 
 | Section | Fields | Purpose |
@@ -99,8 +99,8 @@ result = validator.validate(card)
 if not result.is_valid:
     for error in result.errors:
         print(f"Error: {error}")
-```
 
+```text
 ### Required Fields
 
 | Field | Required | Validation |
@@ -126,8 +126,8 @@ registry.register(model, card)
 # List registered models
 for model_id in registry.list():
     print(model_id)
-```
 
+```text
 ### Versioning
 
 ```mermaid
@@ -138,8 +138,8 @@ graph LR
 
     V1 --> PROD1[Production]
     V12 --> PROD2[Production]
-```
 
+```text
 ## Model Validation
 
 ### Validation Checks
@@ -160,8 +160,8 @@ report = validator.validate(model, X_test, y_test)
 print(f"Performance: {report.performance}")
 print(f"Fairness: {report.fairness}")
 print(f"Approved: {report.approved}")
-```
 
+```text
 ### Approval Workflow
 
 ```mermaid
@@ -173,8 +173,8 @@ graph TB
     STAGE --> MONITOR[Monitoring]
     MONITOR -->|Drift| RETRAIN[Retrain]
     RETRAIN --> VALIDATE
-```
 
+```text
 ## Drift Detection
 
 ### Data Drift
@@ -193,8 +193,8 @@ drift = detector.detect(X_reference, X_current)
 
 if drift.psi > 0.2:
     print("Significant drift detected!")
-```
 
+```text
 ### Performance Drift
 
 ```python
@@ -203,8 +203,8 @@ monitor = detector.monitor_performance(y_true, y_pred)
 
 if monitor.auc_drop > 0.05:
     print("Performance degradation detected!")
-```
 
+```text
 ### Drift Thresholds
 
 | PSI Value | Interpretation | Action |
@@ -236,8 +236,8 @@ log.append({
     "version": "1.0.0",
     "environment": "production",
 })
-```
 
+```text
 ## CLI Commands
 
 ```bash
@@ -249,8 +249,8 @@ ununseptium model drift --model-id aml-v1 --data current.csv
 
 # Show model info
 ununseptium model info aml-transaction-risk-v1
-```
 
+```text
 ## Related Documentation
 
 - [AI Overview](ai-overview.md)

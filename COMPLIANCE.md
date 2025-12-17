@@ -63,8 +63,8 @@ graph TB
     VER --> VER_MOD
     SCREEN --> SCREEN_MOD
     RISK --> RISK_MOD
-```
 
+```text
 ## Audit Evidence
 
 ### Audit Log Structure
@@ -98,8 +98,8 @@ assert log.verify(), "Audit log integrity failed"
 # Export for auditors
 log.export_json("audit_evidence.json")
 log.export_csv("audit_evidence.csv")
-```
 
+```text
 ## Compliance Mapping
 
 ### Module to Compliance Domain
@@ -150,8 +150,8 @@ ununseptium audit verify audit.log --output verification_report.json
 
 # Generate risk model documentation
 ununseptium model validate model_card.json
-```
 
+```text
 ## Jurisdiction Considerations
 
 ### Framework Agnostic Design

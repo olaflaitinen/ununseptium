@@ -110,7 +110,7 @@ class VelocityTracker:
             Tuple of (transaction_count, total_amount).
         """
         if timestamp is None:
-            timestamp = datetime.utcnow()
+            timestamp = datetime.now(timezone.utc)
 
         if entity_id not in self._buckets:
             return 0, 0.0

@@ -86,10 +86,12 @@ See [Glossary](glossary.md) for terminology definitions.
 GitHub natively renders Mermaid diagrams in markdown files. Use fenced code blocks:
 
 ~~~markdown
+
 ```mermaid
 graph TD
     A --> B
-```
+
+```text
 ~~~
 
 See [GitHub Mermaid Documentation](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams).

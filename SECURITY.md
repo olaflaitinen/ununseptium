@@ -99,8 +99,8 @@ from ununseptium.security import Encryptor
 encryptor = Encryptor()
 encryptor.generate_key()  # Requires cryptography package
 encrypted = encryptor.encrypt(sensitive_data)
-```
 
+```text
 ## Security Updates
 
 Security advisories are published via:
