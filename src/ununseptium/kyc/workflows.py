@@ -6,7 +6,7 @@ coordinating multiple verification steps and tracking state.
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import UTC, datetime
 from enum import Enum
 from typing import TYPE_CHECKING, Any
 from uuid import uuid4
@@ -71,7 +71,7 @@ class WorkflowStep(BaseModel):
     def start(self) -> None:
         """Mark step as started."""
         self.status = StepStatus.IN_PROGRESS
-        self.started_at = datetime.now(timezone.utc)
+        self.started_at = datetime.now(UTC)
 
     def complete(self, output_data: dict[str, Any] | None = None) -> None:
         """Mark step as completed.
@@ -80,7 +80,7 @@ class WorkflowStep(BaseModel):
             output_data: Optional output data from step.
         """
         self.status = StepStatus.COMPLETED
-        self.completed_at = datetime.now(timezone.utc)
+        self.completed_at = datetime.now(UTC)
         if output_data:
             self.output_data = output_data
 
@@ -91,13 +91,13 @@ class WorkflowStep(BaseModel):
             error_message: Error description.
         """
         self.status = StepStatus.FAILED
-        self.completed_at = datetime.now(timezone.utc)
+        self.completed_at = datetime.now(UTC)
         self.error_message = error_message
 
     def skip(self) -> None:
         """Mark step as skipped."""
         self.status = StepStatus.SKIPPED
-        self.completed_at = datetime.now(timezone.utc)
+        self.completed_at = datetime.now(UTC)
 
 
 class WorkflowResult(BaseModel):
@@ -272,7 +272,7 @@ class KYCWorkflow(BaseModel):
             raise ValueError(msg)
 
         self.state = WorkflowState.IN_PROGRESS
-        self.updated_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(UTC)
 
         if self.steps:
             self.steps[0].start()
@@ -304,7 +304,7 @@ class KYCWorkflow(BaseModel):
             return False
 
         step.complete(output_data)
-        self.updated_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(UTC)
 
         # Move to next step
         self.current_step_index += 1
@@ -328,7 +328,7 @@ class KYCWorkflow(BaseModel):
             return
 
         step.fail(error_message)
-        self.updated_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(UTC)
 
         if step.required:
             self.state = WorkflowState.REJECTED
@@ -354,7 +354,7 @@ class KYCWorkflow(BaseModel):
 
         step.skip()
         self.current_step_index += 1
-        self.updated_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(UTC)
 
         if self.current_step_index < len(self.steps):
             self.steps[self.current_step_index].start()
@@ -381,7 +381,7 @@ class KYCWorkflow(BaseModel):
             reason: Cancellation reason.
         """
         self.state = WorkflowState.CANCELLED
-        self.updated_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(UTC)
         if reason:
             self.metadata["cancellation_reason"] = reason
 
@@ -435,4 +435,4 @@ class KYCWorkflow(BaseModel):
             else:
                 self.state = WorkflowState.APPROVED
 
-        self.updated_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(UTC)

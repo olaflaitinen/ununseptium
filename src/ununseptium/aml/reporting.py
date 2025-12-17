@@ -6,7 +6,7 @@ including Suspicious Activity Reports (SARs).
 
 from __future__ import annotations
 
-from datetime import date, datetime
+from datetime import UTC, date, datetime
 from enum import Enum
 from typing import TYPE_CHECKING, Any
 from uuid import uuid4
@@ -133,7 +133,7 @@ class SARReport(BaseModel):
     def submit(self) -> None:
         """Mark report as submitted."""
         self.status = ReportStatus.SUBMITTED
-        self.submitted_at = datetime.now(timezone.utc)
+        self.submitted_at = datetime.now(UTC)
 
     def acknowledge(self, acknowledgment_number: str) -> None:
         """Record regulatory acknowledgment.

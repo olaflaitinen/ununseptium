@@ -32,7 +32,7 @@ Security updates are provided for the latest minor version only. Users should up
 
 We follow coordinated disclosure. Please do NOT open public issues for security vulnerabilities.
 
-**Report via:** security@ununseptium.dev (or create a private security advisory on GitHub)
+**Report via:** <security@ununseptium.dev> (or create a private security advisory on GitHub)
 
 ### Required Information
 
@@ -100,7 +100,8 @@ encryptor = Encryptor()
 encryptor.generate_key()  # Requires cryptography package
 encrypted = encryptor.encrypt(sensitive_data)
 
-```text
+```
+
 ## Security Updates
 
 Security advisories are published via:

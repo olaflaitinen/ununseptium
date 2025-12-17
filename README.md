@@ -1,6 +1,6 @@
 # Ununseptium
 
-**State-of-the-Art RegTech and Cybersecurity Python Library**
+## State-of-the-Art RegTech and Cybersecurity Python Library
 
 [![CI](https://github.com/olaflaitinen/ununseptium/actions/workflows/ci.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/ci.yml)
 [![Docs Quality](https://github.com/olaflaitinen/ununseptium/actions/workflows/docs-quality.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/docs-quality.yml)

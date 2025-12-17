@@ -7,7 +7,7 @@ streaming algorithms.
 from __future__ import annotations
 
 from collections import deque
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta
 from typing import TYPE_CHECKING, Any
 
 from pydantic import BaseModel, Field
@@ -110,7 +110,7 @@ class VelocityTracker:
             Tuple of (transaction_count, total_amount).
         """
         if timestamp is None:
-            timestamp = datetime.now(timezone.utc)
+            timestamp = datetime.now(UTC)
 
         if entity_id not in self._buckets:
             return 0, 0.0

@@ -5,7 +5,7 @@ Provides model registry, validation, and model cards.
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import UTC, datetime
 from enum import Enum
 from typing import Any
 from uuid import uuid4
@@ -104,7 +104,7 @@ class ModelCard(BaseModel):
         """
         self.stage = new_stage
         self.approved_by = approved_by
-        self.updated_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(UTC)
 
 
 class ValidationResult(BaseModel):
@@ -349,7 +349,7 @@ class ModelRegistry:
         Args:
             model_card: Updated model card.
         """
-        model_card.updated_at = datetime.now(timezone.utc)
+        model_card.updated_at = datetime.now(UTC)
         self._models[model_card.model_id] = model_card
 
     def delete(self, model_id: str) -> bool:

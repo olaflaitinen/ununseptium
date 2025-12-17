@@ -171,7 +171,7 @@ For legal inquiries:
 
 | Channel | Address |
 |---------|---------|
-| Email | legal@ununseptium.dev |
+| Email | <legal@ununseptium.dev> |
 | GitHub | Issues (non-confidential) |
 
 ## References

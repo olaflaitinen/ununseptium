@@ -7,7 +7,7 @@ with detection, masking, and secure storage capabilities.
 from __future__ import annotations
 
 import re
-from datetime import datetime
+from datetime import UTC, datetime
 from enum import Enum
 from typing import Any
 from uuid import uuid4
@@ -303,7 +303,7 @@ class PIIVault:
             "value": value,  # In production: encrypt this
             "pii_type": pii_type.value,
             "entity_id": entity_id,
-            "stored_at": datetime.now(timezone.utc).isoformat(),
+            "stored_at": datetime.now(UTC).isoformat(),
         }
 
         # Create lookup by value hash

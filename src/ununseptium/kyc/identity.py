@@ -5,7 +5,7 @@ Provides core identity models and verification logic for KYC compliance.
 
 from __future__ import annotations
 
-from datetime import date, datetime, timezone
+from datetime import UTC, date, datetime
 from enum import Enum
 from typing import Any
 from uuid import uuid4
@@ -74,8 +74,8 @@ class Identity(BaseModel):
     email: str | None = None
     phone: str | None = None
     metadata: dict[str, Any] = Field(default_factory=dict)
-    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
-    updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
     @field_validator("nationality")
     @classmethod
@@ -131,7 +131,7 @@ class VerificationResult(BaseModel):
     confidence: float = Field(default=0.0, ge=0.0, le=1.0)
     reason_codes: list[ReasonCode] = Field(default_factory=list)
     evidence_refs: list[str] = Field(default_factory=list)
-    verified_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    verified_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
     expires_at: datetime | None = None
     metadata: dict[str, Any] = Field(default_factory=dict)
 

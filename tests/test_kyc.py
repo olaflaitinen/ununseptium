@@ -11,12 +11,10 @@ class TestIdentity:
         from ununseptium.kyc import Identity
 
         identity = Identity(
-            first_name="John",
-            last_name="Doe",
+            name="John Doe",
         )
-        assert identity.first_name == "John"
-        assert identity.last_name == "Doe"
-        assert identity.full_name == "John Doe"
+        assert identity.name == "John Doe"
+        assert identity.id.startswith("ID-")
 
 
 class TestIdentityVerifier:

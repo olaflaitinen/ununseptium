@@ -69,7 +69,7 @@ Community leaders have the right and responsibility to remove, edit, or reject c
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at:
 
-**Email**: conduct@ununseptium.dev
+**Email**: <conduct@ununseptium.dev>
 
 All complaints will be reviewed and investigated promptly and fairly.
 

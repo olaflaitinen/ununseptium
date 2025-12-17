@@ -6,7 +6,7 @@ investigating and tracking suspicious activity.
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import UTC, datetime
 from enum import Enum
 from typing import Any
 from uuid import uuid4
@@ -96,7 +96,7 @@ class Alert(BaseModel):
     def escalate(self) -> None:
         """Escalate the alert."""
         self.status = AlertStatus.ESCALATED
-        self.updated_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(UTC)
 
     def dismiss(self, reason: str | None = None) -> None:
         """Dismiss the alert.
@@ -105,7 +105,7 @@ class Alert(BaseModel):
             reason: Dismissal reason.
         """
         self.status = AlertStatus.DISMISSED
-        self.updated_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(UTC)
         if reason:
             self.metadata["dismissal_reason"] = reason
 
@@ -117,7 +117,7 @@ class Alert(BaseModel):
         """
         self.status = AlertStatus.CONVERTED
         self.case_id = case_id
-        self.updated_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(UTC)
 
 
 class CaseNote(BaseModel):
@@ -214,7 +214,7 @@ class Case(BaseModel):
         """
         note = CaseNote(content=content, author=author, note_type=note_type)
         self.notes.append(note)
-        self.updated_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(UTC)
         return note
 
     def add_action(
@@ -239,7 +239,7 @@ class Case(BaseModel):
             performed_by=performed_by,
         )
         self.actions.append(action)
-        self.updated_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(UTC)
         return action
 
     def assign(self, assignee: str) -> None:
@@ -250,7 +250,7 @@ class Case(BaseModel):
         """
         self.assigned_to = assignee
         self.status = CaseStatus.UNDER_INVESTIGATION
-        self.updated_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(UTC)
 
     def close(
         self,
@@ -268,7 +268,7 @@ class Case(BaseModel):
         self.status = status
         self.findings = findings
         self.recommendation = recommendation
-        self.updated_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(UTC)
 
 
 class CaseManager:

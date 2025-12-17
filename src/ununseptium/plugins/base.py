@@ -6,7 +6,7 @@ Provides base plugin class and metadata definitions.
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from datetime import datetime
+from datetime import UTC, datetime
 from enum import Enum
 from typing import Any
 
@@ -154,7 +154,7 @@ class Plugin(ABC):
         """
         self._state = state
         if state == PluginState.INITIALIZED:
-            self._initialized_at = datetime.now(timezone.utc)
+            self._initialized_at = datetime.now(UTC)
 
     def set_error(self, error: Exception) -> None:
         """Set error state.

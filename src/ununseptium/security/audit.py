@@ -7,7 +7,7 @@ verification for tamper detection.
 from __future__ import annotations
 
 import json
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 from uuid import uuid4
@@ -108,7 +108,7 @@ class HashChain:
             "index": len(self._entries),
             "prev_hash": prev_hash,
             "data": data,
-            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "timestamp": datetime.now(UTC).isoformat(),
         }
 
         entry_hash = deterministic_hash(chain_data, algorithm=self.algorithm)
@@ -376,14 +376,14 @@ class AuditVerifier:
                 entry_count=len(log),
                 failed_index=index,
                 message=message,
-                verified_at=datetime.now(timezone.utc),
+                verified_at=datetime.now(UTC),
             )
         except Exception as e:
             return VerificationResult(
                 is_valid=False,
                 entry_count=0,
                 message=f"Verification failed: {e}",
-                verified_at=datetime.now(timezone.utc),
+                verified_at=datetime.now(UTC),
             )
 
     def verify_log(self, log: AuditLog) -> VerificationResult:
