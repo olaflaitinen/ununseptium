@@ -7,7 +7,7 @@
 [![Security](https://github.com/olaflaitinen/ununseptium/actions/workflows/security.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/security.yml)
 [![Build](https://github.com/olaflaitinen/ununseptium/actions/workflows/build.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/build.yml)
 [![Release](https://github.com/olaflaitinen/ununseptium/actions/workflows/release.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/release.yml)
-[![Publish](https://github.com/olaflaitinen/ununseptium/actions/workflows/publish.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/publish.yml)
+
 [![CodeQL](https://github.com/olaflaitinen/ununseptium/actions/workflows/codeql.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/codeql.yml)
 [![Scorecard](https://github.com/olaflaitinen/ununseptium/actions/workflows/scorecard.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/scorecard.yml)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/olaflaitinen/ununseptium/blob/main/LICENSE)
