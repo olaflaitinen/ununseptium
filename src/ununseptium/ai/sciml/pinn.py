@@ -282,8 +282,6 @@ class PINNTrainer:
 
     def _compute_pde_residual(self, x: Any, u: Any) -> Any:
         """Compute PDE residual (simplified)."""
-        import torch
-
         # Default: just return u (no actual PDE)
         return u.squeeze()
 

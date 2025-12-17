@@ -18,20 +18,20 @@ from ununseptium.ai.governance import ModelCard, ModelRegistry, ModelValidator
 from ununseptium.ai.models import EnsembleModel, ModelInterface, RiskScorer
 
 __all__ = [
+    # Models
+    "EnsembleModel",
+    # Explain
+    "ExplanationResult",
     # Features
     "FeatureEncoder",
     "FeatureEngineer",
-    "FeatureSpec",
-    # Models
-    "EnsembleModel",
-    "ModelInterface",
-    "RiskScorer",
-    # Explain
-    "ExplanationResult",
     "FeatureImportance",
-    "ReasonCodeGenerator",
+    "FeatureSpec",
     # Governance
     "ModelCard",
+    "ModelInterface",
     "ModelRegistry",
     "ModelValidator",
+    "ReasonCodeGenerator",
+    "RiskScorer",
 ]

@@ -44,32 +44,32 @@ from ununseptium.kyc.workflows import (
 )
 
 __all__ = [
-    # Identity
-    "Identity",
-    "IdentityVerifier",
-    "RiskLevel",
-    "VerificationResult",
-    "VerificationStatus",
     # Documents
     "Document",
     "DocumentExtractor",
     "DocumentType",
     "DocumentValidator",
+    # Entity Resolution
+    "EntityResolver",
     "ExtractionResult",
+    # Identity
+    "Identity",
+    "IdentityVerifier",
+    # Workflows
+    "KYCWorkflow",
+    "MatchResult",
+    "MatchScore",
+    "ResolvedEntity",
+    "RiskLevel",
     # Screening
     "ScreeningEngine",
     "ScreeningMatch",
     "ScreeningResult",
+    "VerificationResult",
+    "VerificationStatus",
     "WatchlistEntry",
     "WatchlistMatcher",
     "WatchlistType",
-    # Entity Resolution
-    "EntityResolver",
-    "MatchResult",
-    "MatchScore",
-    "ResolvedEntity",
-    # Workflows
-    "KYCWorkflow",
     "WorkflowResult",
     "WorkflowState",
     "WorkflowStep",

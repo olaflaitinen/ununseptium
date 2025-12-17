@@ -24,16 +24,6 @@ from ununseptium.aml.typologies import (
 )
 
 __all__ = [
-    # Transactions
-    "Transaction",
-    "TransactionBatch",
-    "TransactionParser",
-    "TransactionType",
-    # Typologies
-    "Typology",
-    "TypologyDetector",
-    "TypologyMatch",
-    "TypologyType",
     # Cases
     "Alert",
     "AlertSeverity",
@@ -44,4 +34,14 @@ __all__ = [
     "ReportGenerator",
     "ReportType",
     "SARReport",
+    # Transactions
+    "Transaction",
+    "TransactionBatch",
+    "TransactionParser",
+    "TransactionType",
+    # Typologies
+    "Typology",
+    "TypologyDetector",
+    "TypologyMatch",
+    "TypologyType",
 ]

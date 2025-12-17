@@ -8,7 +8,6 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
-from typing import Any
 
 import click
 from rich.console import Console
@@ -287,7 +286,7 @@ def doctor() -> None:
 
     # Check core module
     try:
-        from ununseptium.core import Settings
+        from ununseptium.core import Settings  # noqa: F401
 
         checks.append(("Core module", True, "OK"))
     except ImportError as e:
@@ -295,7 +294,7 @@ def doctor() -> None:
 
     # Check KYC module
     try:
-        from ununseptium.kyc import IdentityVerifier
+        from ununseptium.kyc import IdentityVerifier  # noqa: F401
 
         checks.append(("KYC module", True, "OK"))
     except ImportError as e:
@@ -303,7 +302,7 @@ def doctor() -> None:
 
     # Check AML module
     try:
-        from ununseptium.aml import TransactionParser
+        from ununseptium.aml import TransactionParser  # noqa: F401
 
         checks.append(("AML module", True, "OK"))
     except ImportError as e:
@@ -311,7 +310,7 @@ def doctor() -> None:
 
     # Check Security module
     try:
-        from ununseptium.security import PIIDetector
+        from ununseptium.security import PIIDetector  # noqa: F401
 
         checks.append(("Security module", True, "OK"))
     except ImportError as e:
@@ -319,7 +318,7 @@ def doctor() -> None:
 
     # Check AI module
     try:
-        from ununseptium.ai import RiskScorer
+        from ununseptium.ai import RiskScorer  # noqa: F401
 
         checks.append(("AI module", True, "OK"))
     except ImportError as e:

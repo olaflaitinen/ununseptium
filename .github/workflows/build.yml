@@ -58,11 +58,17 @@ jobs:
           name: dist
           path: dist/
       
-      - name: Install package
-        run: |
-          pip install dist/*.whl
+      - name: Install package (Unix)
+        if: runner.os != 'Windows'
+        run: pip install dist/*.whl
+      
+      - name: Install package (Windows)
+        if: runner.os == 'Windows'
+        shell: bash
+        run: pip install dist/*.whl
       
       - name: Verify installation
         run: |
           python -c "import ununseptium; print(ununseptium.__version__)"
           ununseptium --help
+

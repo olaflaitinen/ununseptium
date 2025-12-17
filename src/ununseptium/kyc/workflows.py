@@ -14,7 +14,7 @@ from uuid import uuid4
 from pydantic import BaseModel, Field
 
 if TYPE_CHECKING:
-    from ununseptium.kyc.identity import Identity, VerificationResult
+    pass
 
 
 class WorkflowState(str, Enum):

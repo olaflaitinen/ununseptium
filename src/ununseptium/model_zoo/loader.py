@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
 import numpy as np
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 from ununseptium.ai.models import ModelInterface, PredictionResult
 from ununseptium.model_zoo.catalog import ModelCatalog, ModelEntry

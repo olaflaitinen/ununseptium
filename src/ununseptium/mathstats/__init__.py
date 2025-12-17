@@ -26,29 +26,29 @@ from ununseptium.mathstats.uncertainty import (
 )
 
 __all__ = [
-    # Uncertainty
-    "CalibrationMetrics",
-    "ConformalPredictor",
-    "PredictionSet",
     # Sequential
     "ADWIN",
     "CUSUM",
-    "DriftDetector",
     "SPRT",
-    # Tails
-    "EVTAnalyzer",
-    "GPDFit",
-    "TailRiskScore",
-    # Point Process
-    "HawkesProcess",
-    "IntensityEstimator",
+    # Uncertainty
+    "CalibrationMetrics",
+    # Graph Stats
+    "CommunityDetector",
+    "ConformalPredictor",
     # Dependence
     "CopulaFitter",
     "DependenceMetrics",
-    # Graph Stats
-    "CommunityDetector",
+    "DriftDetector",
+    # Tails
+    "EVTAnalyzer",
+    "GPDFit",
     "GraphFeatures",
-    "TemporalMotifs",
+    # Point Process
+    "HawkesProcess",
+    "IntensityEstimator",
     # Numerics
     "NumericsUtils",
+    "PredictionSet",
+    "TailRiskScore",
+    "TemporalMotifs",
 ]

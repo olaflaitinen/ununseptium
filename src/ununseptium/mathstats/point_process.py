@@ -5,8 +5,6 @@ Provides Hawkes process modeling for self-exciting events.
 
 from __future__ import annotations
 
-from typing import Any
-
 import numpy as np
 from pydantic import BaseModel, Field
 

@@ -1,5 +1,4 @@
-"""
-Ununseptium: State-of-the-art RegTech and Cybersecurity Python Library.
+"""Ununseptium: State-of-the-art RegTech and Cybersecurity Python Library.
 
 Provides comprehensive tools for:
 - KYC/AML automation
@@ -8,6 +7,7 @@ Provides comprehensive tools for:
 - Scientific ML (PINN, Neural ODEs)
 """
 
+from ununseptium import ai, aml, cli, core, kyc, mathstats, model_zoo, plugins, security
 from ununseptium.core.config import Settings, load_config
 from ununseptium.core.errors import (
     IntegrityError,
@@ -21,32 +21,25 @@ __version__ = "1.0.0"
 __author__ = "Olaf Laitinen"
 __email__ = "olaf.laitinen@protonmail.com"
 
-# Module imports for convenient access
-from ununseptium import aml, ai, core, kyc, mathstats, security
-from ununseptium import cli, model_zoo, plugins
-
 __all__ = [
-    # Version info
-    "__author__",
-    "__email__",
-    "__version__",
-    # Configuration
-    "Settings",
-    "load_config",
-    # Errors
     "IntegrityError",
     "ModelError",
     "SecurityError",
+    "Settings",
     "UnunseptiumError",
     "ValidationError",
-    # Modules
+    "__author__",
+    "__email__",
+    "__version__",
     "ai",
     "aml",
     "cli",
     "core",
     "kyc",
+    "load_config",
     "mathstats",
     "model_zoo",
     "plugins",
     "security",
 ]
+

@@ -6,7 +6,7 @@ Provides constraint interfaces for enforcing physical laws.
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from typing import Any, Callable
+from typing import Callable
 
 import numpy as np
 from pydantic import BaseModel, Field
