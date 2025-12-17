@@ -102,11 +102,11 @@ GitHub supports LaTeX math rendering:
 - Inline: `$E = mc^2$` renders as $E = mc^2$
 - Block:
   
-  ```markdown
+  ~~~markdown
   $$
   \int_0^\infty f(x) dx
   $$
-  ```
+  ~~~
 
 See [GitHub Math Documentation](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions).
 

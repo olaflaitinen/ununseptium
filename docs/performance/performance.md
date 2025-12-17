@@ -207,4 +207,3 @@ See [figures/](../figures/) for benchmark visualizations:
 ## References
 
 - [Glossary](../glossary.md)
-

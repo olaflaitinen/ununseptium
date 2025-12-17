@@ -402,7 +402,7 @@ class AuditVerifier:
             entry_count=len(log),
             failed_index=index,
             message=message,
-            verified_at=datetime.now(timezone.utc),
+            verified_at=datetime.now(UTC),
         )
 
 
