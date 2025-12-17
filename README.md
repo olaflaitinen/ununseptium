@@ -6,7 +6,6 @@
 [![Docs Quality](https://github.com/olaflaitinen/ununseptium/actions/workflows/docs-quality.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/docs-quality.yml)
 [![Security](https://github.com/olaflaitinen/ununseptium/actions/workflows/security.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/security.yml)
 [![Build](https://github.com/olaflaitinen/ununseptium/actions/workflows/build.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/build.yml)
-[![Release](https://github.com/olaflaitinen/ununseptium/actions/workflows/release.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/release.yml)
 
 [![CodeQL](https://github.com/olaflaitinen/ununseptium/actions/workflows/codeql.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/codeql.yml)
 [![Scorecard](https://github.com/olaflaitinen/ununseptium/actions/workflows/scorecard.yml/badge.svg)](https://github.com/olaflaitinen/ununseptium/actions/workflows/scorecard.yml)
